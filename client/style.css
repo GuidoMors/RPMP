@@ -5,14 +5,7 @@ body {
     background-color: black;
     color: white;
 }
-.menu { 
-    margin-bottom: 20px; 
-}
 
-.menu button { 
-    margin: 5px; 
-    padding: 10px 20px; 
-}
   
 table { 
     border-collapse: collapse; 
@@ -111,6 +104,24 @@ th, td {
     width: 250px;
 }
 
+#back-btn:hover, #pause-btn:hover {
+    background-color: orange;
+    border-color: orange;
+}
+
+.refresh-btn {
+    padding: 10px 20px; 
+    position:absolute;
+    left: 1.2em;
+    bottom: 2em;
+}
+
+.refresh-btn:hover {
+    background-color: orange;
+    border-color: orange;
+    border-radius: 3px;
+}
+
 .google-drive-row {
     background-color: grey ;
 }
@@ -118,4 +129,29 @@ th, td {
 .marked {
     background-color: orange !important;
     color: black !important;
+}
+
+.paused {
+    background-color: purple;
+    color: white;
+}
+
+.playing {
+    background-color: white;
+    color: black;
+}
+
+.sheet-container {
+    margin-left: 1em;
+}
+
+.sheet-container button { 
+    margin: .2em; 
+    padding: 10px 20px; 
+}
+
+.sheet-container button:hover {
+    background-color: orange;
+    border-color: orange;
+    border-radius: 3px;
 }

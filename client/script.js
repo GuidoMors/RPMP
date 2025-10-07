@@ -80,6 +80,7 @@ function drawRefreshButton(){
     var mainMenu = document.getElementById('main-menu');
     var refreshBtn = document.createElement('button');
     refreshBtn.textContent = 'Refresh Data';
+    refreshBtn.className = 'refresh-btn';
     refreshBtn.addEventListener('click', async () => {
         refreshBtn.disabled = true;
         refreshBtn.textContent = 'Refreshing...';
@@ -164,8 +165,7 @@ function drawAct(actName, sheetName) {
 
                 row.addEventListener("contextmenu", (e) => {
                     e.preventDefault(); 
-                    row.style.backgroundColor = "";
-                    row.style.color = "";
+                    row.classList.remove('paused');
                     row.classList.toggle("marked");
                 });
 
@@ -282,18 +282,18 @@ function makeYoutubeCell(item, id, event){
         const currentTime = player.getCurrentTime();
 
         if (event.data === YT.PlayerState.PLAYING) {
-          tr.style.backgroundColor = "white";
-          tr.style.color = "black";
+          tr.classList.add('playing');
+          tr.classList.remove('paused');
         } else if (
           event.data === YT.PlayerState.PAUSED ||
           event.data === YT.PlayerState.ENDED
         ) {
             if (currentTime < 1){
-                tr.style.backgroundColor = "transparent";
-                tr.style.color = "white";
+                tr.classList.remove('playing');
+                tr.classList.remove('paused');
             } else {
-                tr.style.backgroundColor = "purple";
-                tr.style.color = "white";
+                tr.classList.add('paused');
+                tr.classList.remove('playing');
             }
 
         }
@@ -304,6 +304,7 @@ function makeYoutubeCell(item, id, event){
     allPlayers.push(player);
 }
 
+
 function pauseAllYoutubePlayers() {
   for (const p of allPlayers) {
     if (p && typeof p.getPlayerState === "function") {
@@ -312,8 +313,8 @@ function pauseAllYoutubePlayers() {
         p.pauseVideo();
         const tr = document.getElementById(p.getIframe().id).closest("tr");
         if (tr) {
-            tr.style.backgroundColor = "purple";
-            tr.style.color = "white";
+            tr.classList.add('paused');
+            tr.classList.remove('playing');
         }
       }
     }

@@ -83,11 +83,10 @@ function getLocalMusicFile(shorthand) {
         const filename = shorthand + "MusicData.json";
         const filePath = path.join(__dirname, "data", filename);
         const data = fs.readFileSync(filePath, 'utf-8');
-        console.log(`Loaded ${filename} locally`);
+        console.log(`Loaded ${shorthand} locally`);
         return JSON.parse(data);
     } catch (err) {
-        const filename = shorthand + "MusicData.json";
-        console.warn(`No local file found for ${filename}`);
+        console.warn(`No local file found for ${shorthand}`);
         return null;
     }
 }
