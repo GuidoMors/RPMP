@@ -5,15 +5,20 @@ A useful tool for Dungeonmasters and Handlers which can play music through your 
 The music comes from google spreadsheets you can configure yourself with links to youtube and mp3's in google drive.
 
 
+
+**REQUIREMENTS:**
+
+-node.js (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+
+
 **SETUP:**
+
+-do npm install to get the node modules
 
 -create spreadsheet containing your music using the following example: https://docs.google.com/spreadsheets/d/1alcp3kRT8cPaMXm4fr4xqSQfg-RSK8kp6Jkb5-u2GcQ/edit?gid=0#gid=0
 
 -setup spreadsheats.json (see below)
-
--do npm install to get the node modules
-
-
 
 
 
