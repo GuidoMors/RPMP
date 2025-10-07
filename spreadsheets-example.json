@@ -8,7 +8,7 @@
       "shorthand": "IL",
       "spreadsheet": {
         "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-        "tabs": ["name of first tab", "name of second tab", "bonds"]
+        "tabs": ["name of first tab", "name of second tab", "name of the third tab"]
       }
     },
     {
@@ -16,7 +16,7 @@
       "shorthand": "AT",
       "spreadsheet": {
         "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-        "tabs": ["name of first tab", "name of second tab", "bonds"]
+        "tabs": ["name of first tab", "name of second tab", "name of the third tab"]
       }
     }
   ]

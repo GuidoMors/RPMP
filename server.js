@@ -1,9 +1,3 @@
-// you can get the spreadsheet id from the url.
-// so the url https://docs.google.com/spreadsheets/d/1alcp3kRT8cPaMXm4fr4xqSQfg-RSK8kp6Jkb5-u2GcQ/edit?gid=0#gid=0
-// has the spreadsheet id:                           1alcp3kRT8cPaMXm4fr4xqSQfg-RSK8kp6Jkb5-u2GcQ
-
-// request an api key for your own google environment
-// https://support.google.com/googleapi/answer/6158862?hl=en
 
 const express = require('express');
 const fs = require('fs');
