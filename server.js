@@ -45,7 +45,7 @@ app.get('/api/refresh-music', async (req, res) => {
     });
     try {
         const newData = await fetchAllMusicData();
-        res.json({ success: true, GLOBAL_musicData: newData });
+        res.json({ success: true, musicData: newData });
     } catch (err) {
         console.error(err);
         res.status(500).json({ success: false, message: 'Failed to fetch data' });
