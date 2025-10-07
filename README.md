@@ -1,3 +1,10 @@
+**RPMP: Roleplaying Music Player**
+
+A useful tool for Dungeonmasters and Handlers which can play music through your browser. 
+
+The music comes from google spreadsheets you can configure yourself with links to youtube and mp3's in google drive.
+
+
 **SETUP:**
 
 -create spreadsheet containing your music using the following example: https://docs.google.com/spreadsheets/d/1alcp3kRT8cPaMXm4fr4xqSQfg-RSK8kp6Jkb5-u2GcQ/edit?gid=0#gid=0
