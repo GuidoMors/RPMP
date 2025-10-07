@@ -8,15 +8,15 @@
       "shorthand": "IL",
       "spreadsheet": {
         "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-        "tabs": ["name of first tab", "name of second tab", "name of the third tab"]
+        "tabs": ["act 1", "general", "bonds"]
       }
     },
     {
-      "name": "Akantash Trilogy",
-      "shorthand": "AT",
+      "name": "Another Campaign",
+      "shorthand": "AC",
       "spreadsheet": {
         "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-        "tabs": ["name of first tab", "name of second tab", "name of the third tab"]
+        "tabs": ["name of first tab", "name of second tab", "name of third tab"]
       }
     }
   ]
