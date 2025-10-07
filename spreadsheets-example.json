@@ -1,0 +1,23 @@
+
+
+{
+  "APIKEY": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "SPREADSHEETS": [
+    {
+      "name": "Impossible landscapes",
+      "shorthand": "IL",
+      "spreadsheet": {
+        "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "tabs": ["name of first tab", "name of second tab", "bonds"]
+      }
+    },
+    {
+      "name": "Akantash Trilogy",
+      "shorthand": "AT",
+      "spreadsheet": {
+        "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "tabs": ["name of first tab", "name of second tab", "bonds"]
+      }
+    }
+  ]
+}

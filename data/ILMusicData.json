@@ -1,0 +1,810 @@
+{
+  "Act 1 - Night Floors": {
+    "Generic": {
+      "Generic": [
+        {
+          "event": "The Hallways",
+          "music": "https://www.youtube.com/watch?v=xhwzipsoCC8"
+        },
+        {
+          "event": "Meeting Someone",
+          "music": "https://www.youtube.com/watch?v=u_QqyOaY3mc"
+        },
+        {
+          "event": "Getting Lost",
+          "music": "https://www.youtube.com/watch?v=1V69TwJhuOU"
+        }
+      ]
+    },
+    "Rooms": {
+      "Rooms": [
+        {
+          "event": "Smoking Lounge",
+          "music": "https://www.youtube.com/watch?v=wPOF5FgG3DU"
+        },
+        {
+          "event": "Michelle’s Library at Night",
+          "music": "https://www.youtube.com/watch?v=yAfZTcR5sz8"
+        },
+        {
+          "event": "The Cinema",
+          "music": "https://drive.google.com/file/d/14lrpTQKPHBj8sltURdL7bN4oVMyyKJWF/view?usp=sharing"
+        },
+        {
+          "event": "The Apartments",
+          "music": "https://drive.google.com/file/d/1LUl2eWpMzHBrqq0T29_LMToY5JlkDRzN/view?usp=sharing"
+        },
+        {
+          "event": "Night Manager’s Office",
+          "music": "https://www.youtube.com/watch?v=adaTEdqR4xI"
+        },
+        {
+          "event": "Drowning Room",
+          "music": "https://www.youtube.com/watch?v=FbHgSHdUL_s"
+        },
+        {
+          "event": "The Hospital",
+          "music": "https://www.youtube.com/watch?v=9nKXcp9w8lc"
+        },
+        {
+          "event": "The Bookshop",
+          "music": "https://www.youtube.com/watch?v=v8DXq0Dcc1c"
+        },
+        {
+          "event": "A Distant Play in the Bookshop",
+          "music": "https://drive.google.com/file/d/1qyXoVIQbVQ78zRWXrgRF8uVa47heMY8r/view?usp=sharing"
+        },
+        {
+          "event": "Chateau des Portes",
+          "music": "https://drive.google.com/file/d/1h9bQIiRECMl7Ijok7FgixKyvujGRMYH8/view?usp=sharing"
+        },
+        {
+          "event": "Abigail’s Apartment on 12a",
+          "music": "https://www.youtube.com/watch?v=ztg_eN5GOpg"
+        },
+        {
+          "event": "The Superintendent’s Party (Outside)",
+          "music": "https://www.youtube.com/watch?v=WO5lIi4N34A"
+        },
+        {
+          "event": "The Superintendent’s Party (Inside)",
+          "music": "https://www.youtube.com/watch?v=DIgPo5W_d0Q"
+        }
+      ]
+    },
+    "Hallucinations": {
+      "Hallucinations": [
+        {
+          "event": "Clockwork Child",
+          "music": "https://www.youtube.com/watch?v=F1hLiePZPUs"
+        },
+        {
+          "event": "Masked Men Hallucination",
+          "music": "https://www.youtube.com/watch?v=ZhV5K3XjEfg"
+        },
+        {
+          "event": "Sea of Windows Hallucination ",
+          "music": "https://www.youtube.com/watch?v=h1QtJ-xbWLQ"
+        },
+        {
+          "event": "Stage Hallucination",
+          "music": "https://www.youtube.com/watch?v=bK1rPi_-OQ8"
+        }
+      ]
+    }
+  },
+  "Act 1 - New York": {
+    "Macallistar": {
+      "Macallistar": [
+        {
+          "event": "Hallways during the Day",
+          "music": "https://www.youtube.com/watch?v=qMUoWTEIGx4"
+        },
+        {
+          "event": "Hallways during the Night",
+          "music": "https://www.youtube.com/watch?v=aVrza8LSKNc"
+        },
+        {
+          "event": "The Top Floor",
+          "music": "https://www.youtube.com/watch?v=x5styNnAZ4w"
+        },
+        {
+          "event": "Rooftop",
+          "music": "https://www.youtube.com/watch?v=awFy4h6XMrQ"
+        },
+        {
+          "event": "Basement",
+          "music": "https://www.youtube.com/watch?v=kocs8BXOtQg"
+        }
+      ],
+      "Interviews": [
+        {
+          "event": "Interviewing Carun",
+          "music": "https://www.youtube.com/watch?v=uvAnyb8UETY"
+        },
+        {
+          "event": "Interviewing Vanfitz",
+          "music": "https://www.youtube.com/watch?v=_Y_f5YcENwI"
+        },
+        {
+          "event": "Interviewing Louis or Thomas",
+          "music": "https://www.youtube.com/watch?v=LcPV5CgFeUI"
+        }
+      ],
+      "Item": [
+        {
+          "event": "Thomas Manuel Tape Recording",
+          "music": "https://drive.google.com/file/d/1yr0h8kMw5mCss98tMlJkIuZHXeJU0wuk/view?usp=drive_link"
+        }
+      ],
+      "Event": [
+        {
+          "event": "Prepping to Burn it All Down",
+          "music": "https://www.youtube.com/watch?v=CwvpX6PzMiY"
+        },
+        {
+          "event": "Burning it All Down",
+          "music": "https://www.youtube.com/watch?v=QozR40eIOKg"
+        }
+      ]
+    },
+    "Abigail": {
+      "Abigail": [
+        {
+          "event": "Archiving at Night",
+          "music": "https://www.youtube.com/watch?v=Xyy3ZDACQ84"
+        },
+        {
+          "event": "Archiving Spooky",
+          "music": "https://www.youtube.com/watch?v=YtBg7AyHNOI"
+        },
+        {
+          "event": "Archiving Intrigue",
+          "music": "https://www.youtube.com/watch?v=rHbMZVX9i6s"
+        }
+      ],
+      "Item": [
+        {
+          "event": "SCR 300 #1 (WW2 Commands)",
+          "music": "https://drive.google.com/file/d/1ZlOuauNXKAVYsSVRh4YaJB8u1HKpgt6d/view?usp=drive_link"
+        },
+        {
+          "event": "SCR 300 #2 (More Crazy Static - Put it Quiet)",
+          "music": "https://drive.google.com/file/d/18fCxqUkyeQLPYSCjAnc_WSxvjlWfA_Wv/view?usp=drive_link"
+        },
+        {
+          "event": "Purson's Horn (Loud)",
+          "music": "https://www.youtube.com/watch?v=9Ptcd5O1i7E"
+        }
+      ]
+    },
+    "New York": {
+      "New York": [
+        {
+          "event": "Main Theme",
+          "music": "https://www.youtube.com/watch?v=ptotfJNi4_U"
+        },
+        {
+          "event": "Skyscrapers",
+          "music": "https://www.youtube.com/watch?v=t9byPyKh2rE"
+        },
+        {
+          "event": "Alleyways",
+          "music": "https://www.youtube.com/watch?v=R9XwGgvNdF0"
+        },
+        {
+          "event": "Parks",
+          "music": "https://www.youtube.com/watch?v=r-sKg3EqsGc"
+        },
+        {
+          "event": "Researching",
+          "music": "https://www.youtube.com/watch?v=bz6jN746NOk&t=1526s"
+        },
+        {
+          "event": "Offices",
+          "music": "https://www.youtube.com/watch?v=f1tYe3TkhTc"
+        },
+        {
+          "event": "Nightscape",
+          "music": "https://www.youtube.com/watch?v=TB-BuZR9hhA"
+        }
+      ],
+      "Story": [
+        {
+          "event": "Car Ride",
+          "music": "https://www.youtube.com/watch?v=y-CNdVznqaE"
+        },
+        {
+          "event": "Washington Square Park",
+          "music": "https://www.youtube.com/watch?v=rxevPfOxCaU"
+        }
+      ]
+    },
+    "People": {
+      "People": [
+        {
+          "event": "ARTLIFE - Cynthia Lechance",
+          "music": "https://www.youtube.com/watch?v=2WtcWc2PNG0"
+        },
+        {
+          "event": "Thomas Wright Residence",
+          "music": "https://www.youtube.com/watch?v=870j0RZhRD4"
+        },
+        {
+          "event": "Manuel Parents Residence",
+          "music": "https://www.youtube.com/watch?v=54moBCJSfXg"
+        }
+      ]
+    },
+    "Combat": {
+      "Day": [
+        {
+          "event": "Fighting with the Tenants",
+          "music": "https://www.youtube.com/watch?v=VHwTxYqru7o"
+        }
+      ]
+    },
+    "Ambience": {
+      "Ambience": [
+        {
+          "event": "Library Ambience",
+          "music": "https://www.youtube.com/watch?v=2cHAeTBCu5c"
+        },
+        {
+          "event": "Park Ambience",
+          "music": "https://www.youtube.com/watch?v=xqWod3PhWXM&t=267s"
+        },
+        {
+          "event": "Metropolis Ambience",
+          "music": "https://www.youtube.com/watch?v=n_-RjNR2ryE"
+        },
+        {
+          "event": "City Ambience",
+          "music": "https://www.youtube.com/watch?v=iS8mTFuxuvo&t=1097s"
+        },
+        {
+          "event": "Office Ambience",
+          "music": "https://www.youtube.com/watch?v=6sQXSdzk6U4&t=3467s"
+        },
+        {
+          "event": "Restaurant Ambience",
+          "music": "https://www.youtube.com/watch?v=u9-7fVeCPMU"
+        }
+      ]
+    }
+  },
+  "General": {
+    "Day": {
+      "Spooky": [
+        {
+          "event": "Abandoned Warehouse",
+          "music": "https://www.youtube.com/watch?v=iz9b_suFzMs"
+        },
+        {
+          "event": "Finding a Curious Clue",
+          "music": "https://www.youtube.com/watch?v=gqKqsfcF774"
+        },
+        {
+          "event": "People Walking Outside Your Hotel Room",
+          "music": "https://www.youtube.com/watch?v=w_eWn26l2rs"
+        },
+        {
+          "event": "Agent Just Been Spooked",
+          "music": "https://www.youtube.com/watch?v=8SzYlpq79Bs"
+        }
+      ],
+      "Other": [
+        {
+          "event": "Staking Out an Apartment",
+          "music": "https://www.youtube.com/watch?v=Uj7icn6ORi4"
+        },
+        {
+          "event": "Burying an Agent",
+          "music": "https://www.youtube.com/watch?v=kNiOnMMxak0"
+        }
+      ],
+      "Suspense": [
+        {
+          "event": "Detective Noire On The Case",
+          "music": "https://www.youtube.com/watch?v=w_toC9sNxvw"
+        },
+        {
+          "event": "Agents Digging Up Terrible Secrets",
+          "music": "https://www.youtube.com/watch?v=Ss645DtMbMw"
+        },
+        {
+          "event": "Suspenseful",
+          "music": "https://www.youtube.com/watch?v=tLt3DUgwZCs"
+        },
+        {
+          "event": "Are They Stalking Me?",
+          "music": "https://www.youtube.com/watch?v=vpULWBT1WEg"
+        },
+        {
+          "event": "Time to Analyse That Fucked Up Tome",
+          "music": "https://www.youtube.com/watch?v=8wwCIjk8JU8"
+        },
+        {
+          "event": "Don't Wake The Sleeping Beast",
+          "music": "https://www.youtube.com/watch?v=oB3lbbKNJ2Q"
+        }
+      ],
+      "Intrigue": [
+        {
+          "event": "They Are Slowly Putting the Pieces Together",
+          "music": "https://www.youtube.com/watch?v=4qkr6g9-EmI"
+        },
+        {
+          "event": "Uncovering Dark Secrets In the City Records",
+          "music": "https://www.youtube.com/watch?v=7JIc8qI7c1s"
+        },
+        {
+          "event": "Something Suspicious and Blissful is Setting In",
+          "music": "https://www.youtube.com/watch?v=DR6wBcNhzp4"
+        },
+        {
+          "event": "Is Someone Watching Me, or Am I Crazy?",
+          "music": "https://www.youtube.com/watch?v=01rd9-qqn9Y"
+        }
+      ],
+      "Hotel": [
+        {
+          "event": "A Quiet Hotel Room",
+          "music": "https://www.youtube.com/watch?v=iTf7MpHzTKI"
+        },
+        {
+          "event": "Nightmares",
+          "music": "https://www.youtube.com/watch?v=CvGT66QHTVA"
+        },
+        {
+          "event": "The Hotel Lobby",
+          "music": "https://www.youtube.com/watch?v=XHPjpflNssY"
+        }
+      ],
+      "Normal": [
+        {
+          "event": "Your Bond Has Something Sad to Say",
+          "music": "https://www.youtube.com/watch?v=-JBNDYksNro"
+        },
+        {
+          "event": "Sad Home Scenes",
+          "music": "https://www.youtube.com/watch?v=TGDxmgApj9I"
+        },
+        {
+          "event": "A Shitty Motel",
+          "music": "https://www.youtube.com/watch?v=Xf1YOvtF4ME"
+        },
+        {
+          "event": "Abandoned Metro Station",
+          "music": "https://www.youtube.com/watch?v=V24nC1MWLwg"
+        },
+        {
+          "event": "Being Out There In Calm Nature",
+          "music": "https://www.youtube.com/watch?v=MD4gfpEJkg0"
+        },
+        {
+          "event": "Melancholic Home Scenes",
+          "music": "https://www.youtube.com/watch?v=J9t3yyBobbE"
+        },
+        {
+          "event": "That Fleeting Optimism",
+          "music": "https://www.youtube.com/watch?v=FQto92dOTyw"
+        },
+        {
+          "event": "Character Riding Around Around Town",
+          "music": "https://www.youtube.com/watch?v=_Y_f5YcENwI"
+        },
+        {
+          "event": "Coming Home To An Empty House",
+          "music": "https://www.youtube.com/watch?v=JvuB7qe1SLM"
+        },
+        {
+          "event": "Everything Is Fine (Gaslight the Agents)",
+          "music": "https://www.youtube.com/watch?v=CKjg4E-9m18"
+        },
+        {
+          "event": "Alone in the Metropolis",
+          "music": "https://www.youtube.com/watch?v=M7eAYtHA3wM"
+        },
+        {
+          "event": "Office Scenes",
+          "music": "https://www.youtube.com/watch?v=mEZC100S-rs"
+        },
+        {
+          "event": "Happy Home Scenes",
+          "music": "https://www.youtube.com/watch?v=v7wtrkp5Mx4"
+        },
+        {
+          "event": "Idyllic Home Scene",
+          "music": "https://www.youtube.com/watch?v=t2qMYKYlMFM"
+        },
+        {
+          "event": "Restaurant Home Scenes",
+          "music": "https://www.youtube.com/watch?v=WklZk2kHq_M"
+        }
+      ]
+    },
+    "Story": {
+      "Story": [
+        {
+          "event": "Summoning a Demon",
+          "music": "https://www.youtube.com/watch?v=GtAdC15WznM"
+        },
+        {
+          "event": "Reading Asa Daribondi's Journal",
+          "music": "https://www.youtube.com/watch?v=APoDBYr8cig"
+        }
+      ]
+    },
+    "Combat": {
+      "Combat": [
+        {
+          "event": "Mexican Standoff",
+          "music": "https://www.youtube.com/watch?v=D6aj6AoiLbc"
+        },
+        {
+          "event": "Explosive Battle",
+          "music": "https://www.youtube.com/watch?v=mKhIvse5GkU"
+        },
+        {
+          "event": "STATIC Guns",
+          "music": "https://www.youtube.com/watch?v=3riLudtvflg"
+        },
+        {
+          "event": "Get the Fuck out of Here",
+          "music": "https://www.youtube.com/watch?v=fqmJ5AQqC6E"
+        }
+      ]
+    },
+    "Closer/Opener": {
+      "Action": [
+        {
+          "event": "Faster Paced",
+          "music": "https://www.youtube.com/watch?v=mnCGL27T5lk"
+        },
+        {
+          "event": "Introducing: The Act",
+          "music": "https://www.youtube.com/watch?v=J_sCBLOy-Og"
+        },
+        {
+          "event": "FAST Paced",
+          "music": "https://www.youtube.com/watch?v=qPWmrwF4MOI"
+        }
+      ],
+      "Normal": [
+        {
+          "event": "The Steady Recapper",
+          "music": "https://www.youtube.com/watch?v=R0DI3k_Y_GU"
+        },
+        {
+          "event": "They Did It",
+          "music": "https://www.youtube.com/watch?v=_MZKbJIhPCk"
+        },
+        {
+          "event": "The Heavy Recapper",
+          "music": "https://www.youtube.com/watch?v=Z7rASTJ7NvM"
+        }
+      ],
+      "Happy": [
+        {
+          "event": "A Sweet Ending",
+          "music": "https://www.youtube.com/watch?v=al7RMKl7Weg"
+        }
+      ],
+      "Suspense": [
+        {
+          "event": "Progress",
+          "music": "https://www.youtube.com/watch?v=8Cr6DPImvCE"
+        }
+      ]
+    },
+    "Bar": {
+      "Bar": [
+        {
+          "event": "Fucked Up Bar Music",
+          "music": "https://www.youtube.com/watch?v=6dOcsbiCqFM"
+        },
+        {
+          "event": "Steve",
+          "music": "https://www.youtube.com/watch?v=mO7uqVGtQqc"
+        },
+        {
+          "event": "Black Star",
+          "music": "https://www.youtube.com/watch?v=d7lbzUUXj0k"
+        },
+        {
+          "event": "Little by Little",
+          "music": "https://www.youtube.com/watch?v=5c1lulf5Fkw"
+        },
+        {
+          "event": "Wonderwall",
+          "music": "https://www.youtube.com/watch?v=6hzrDeceEKc"
+        },
+        {
+          "event": "What Ever Happened to Dear Abby",
+          "music": "https://www.youtube.com/watch?v=-d5vM0WORzE"
+        },
+        {
+          "event": "I Saw The Sign",
+          "music": "https://www.youtube.com/watch?v=iqu132vTl5Y"
+        },
+        {
+          "event": "Whatever Happened to Abby",
+          "music": "https://drive.google.com/file/d/1Oneyg7imv8tpGK525AUtAZvuGVDp91gH/view?usp=sharing"
+        }
+      ]
+    },
+    "Singing": {
+      "Singing": [
+        {
+          "event": "Someone Singing about the Sign",
+          "music": "https://www.youtube.com/watch?v=-vR1hCMMZLs"
+        },
+        {
+          "event": "County Singing about the Sign",
+          "music": "https://www.youtube.com/watch?v=B34T5Jg6yhk"
+        }
+      ]
+    },
+    "Night": {
+      "Spooky": [
+        {
+          "event": "Spooky Waltz",
+          "music": "https://drive.google.com/file/d/1x3UIHvuKsoUMzRB7-ytfDk5QW14OTNgy/view?usp=sharing"
+        },
+        {
+          "event": "Spooky Singer",
+          "music": "https://drive.google.com/file/d/1ydIteyyvlZ7MJ7djGXN4x43l3w8U_ICZ/view?usp=sharing"
+        },
+        {
+          "event": "Spooky Band",
+          "music": "https://drive.google.com/file/d/1y7qy7TOQqJXpZS-Wdz3kkfTpYuWFdHKk/view?usp=sharing"
+        }
+      ],
+      "Crazy": [
+        {
+          "event": "There's Something Manifesting in Front of My Door",
+          "music": "https://www.youtube.com/watch?v=c0VTUQ0TwUs"
+        }
+      ],
+      "Night World": [
+        {
+          "event": "Slow 30s Room",
+          "music": "https://www.youtube.com/watch?v=9YsDpbMcoIw"
+        },
+        {
+          "event": "The Agents Have Become Corrupted",
+          "music": "https://www.youtube.com/watch?v=-7FTpJe6lNw"
+        },
+        {
+          "event": "Losing A Bond in the Night World",
+          "music": "https://www.youtube.com/watch?v=xSv2IAlQZeM"
+        },
+        {
+          "event": "Sadness",
+          "music": "https://www.youtube.com/watch?v=5y_7yfu2WOQ"
+        },
+        {
+          "event": "Suspicious, Slow, Steady Walz",
+          "music": "https://www.youtube.com/watch?v=XRu-C_rX9xg"
+        },
+        {
+          "event": "Fetus Position",
+          "music": "https://www.youtube.com/watch?v=2NRxPLv0Qt0"
+        },
+        {
+          "event": "Wanting To Stay in the Night Floors",
+          "music": "https://www.youtube.com/watch?v=maYag-32vyM"
+        },
+        {
+          "event": "Melancholy",
+          "music": "https://www.youtube.com/watch?v=pJc5SZTcFrw"
+        },
+        {
+          "event": "Moment of Peace",
+          "music": "https://www.youtube.com/watch?v=eiGrklBqjeA"
+        },
+        {
+          "event": "Static",
+          "music": "https://www.youtube.com/watch?v=BcziCFoQTr8"
+        },
+        {
+          "event": "Meeting a Bond in the Night Floors",
+          "music": "https://www.youtube.com/watch?v=89Id2T3tzKM"
+        }
+      ]
+    },
+    "Ambience": {
+      "Ambience": [
+        {
+          "event": "Library Ambience",
+          "music": "https://www.youtube.com/watch?v=2cHAeTBCu5c"
+        },
+        {
+          "event": "Park Ambience",
+          "music": "https://www.youtube.com/watch?v=xqWod3PhWXM&t=267s"
+        },
+        {
+          "event": "Metropolis Ambience",
+          "music": "https://www.youtube.com/watch?v=n_-RjNR2ryE"
+        },
+        {
+          "event": "City Ambience",
+          "music": "https://www.youtube.com/watch?v=iS8mTFuxuvo&t=1097s"
+        },
+        {
+          "event": "Office Ambience",
+          "music": "https://www.youtube.com/watch?v=6sQXSdzk6U4&t=3467s"
+        },
+        {
+          "event": "Restaurant Ambience",
+          "music": "https://www.youtube.com/watch?v=u9-7fVeCPMU"
+        }
+      ]
+    }
+  },
+  "Act 0": {
+    "General": {
+      "Other": [
+        {
+          "event": "Delta Green Introduction",
+          "music": "https://www.youtube.com/watch?v=Z7rASTJ7NvM"
+        },
+        {
+          "event": "Rules Introduction",
+          "music": "https://www.youtube.com/watch?v=G1wURtARDnU"
+        },
+        {
+          "event": "Character Creation",
+          "music": "https://www.youtube.com/watch?v=Bq70BFHYfA8"
+        },
+        {
+          "event": "Bond Creation",
+          "music": "https://www.youtube.com/watch?v=stnQ_L-lC48"
+        }
+      ]
+    }
+  },
+  "Bonds": {
+    "Act 1": {
+      "Abe Mors": [
+        {
+          "event": "Abe Mors - The Prop Shop",
+          "music": "https://www.youtube.com/watch?v=PeIGCzCUDrM"
+        }
+      ],
+      "Didescu": [
+        {
+          "event": "Didescu’s Theme",
+          "music": "https://www.youtube.com/watch?v=WO5lIi4N34A"
+        }
+      ],
+      "Siblings": [
+        {
+          "event": "Siblings - The Storage Unit",
+          "music": "https://www.youtube.com/watch?v=ZXvPB_zwyNU"
+        }
+      ],
+      "Carmen": [
+        {
+          "event": "Carmen - Voice Message From Carun",
+          "music": "https://drive.google.com/file/d/1Vpd7B1hydwIBc9Ma9fqUocJ2monhGhnL/view?usp=sharing"
+        },
+        {
+          "event": "Carmen - Strange Voice Call",
+          "music": "https://drive.google.com/file/d/15tm_NI2BcEju9tRPspNpLOnX-uaE4Uj2/view?usp=drive_link"
+        },
+        {
+          "event": "Carmen - Crescent Publishing (+Office Ambience)",
+          "music": "https://www.youtube.com/watch?v=EGh0e8JkgbY"
+        },
+        {
+          "event": "Carmen - Restaurant",
+          "music": "https://www.youtube.com/watch?v=w_toC9sNxvw"
+        }
+      ],
+      "Molly Lundine": [
+        {
+          "event": "Molly Lundine",
+          "music": "https://www.youtube.com/watch?v=J9t3yyBobbE"
+        }
+      ],
+      "Yup Guy": [
+        {
+          "event": "Yup Guy (+Park Ambience)",
+          "music": "https://www.youtube.com/watch?v=FQto92dOTyw"
+        }
+      ],
+      "Colleagues": [
+        {
+          "event": "Colleagues (+Office Ambience)",
+          "music": "https://www.youtube.com/watch?v=mEZC100S-rs"
+        }
+      ],
+      "Mirjam Thayer": [
+        {
+          "event": "Mirjam Thayer's Office",
+          "music": "https://www.youtube.com/watch?v=bG8XPcdte50"
+        }
+      ],
+      "Dog": [
+        {
+          "event": "Walking Kinsey, the Dog",
+          "music": "https://www.youtube.com/watch?v=MD4gfpEJkg0"
+        }
+      ],
+      "Misc": [
+        {
+          "event": "Schizophrenic Voices (Agent Moon - Handler Jafta)",
+          "music": "https://www.youtube.com/watch?v=8SzYlpq79Bs"
+        },
+        {
+          "event": "Alcoholics Anonymous (Handler Jafta)",
+          "music": "https://www.youtube.com/watch?v=S7k75Ae3BOM"
+        }
+      ]
+    },
+    "Home": {
+      "Siblings": [
+        {
+          "event": "Mary's Home - Siblings",
+          "music": "https://www.youtube.com/watch?v=-JBNDYksNro"
+        }
+      ],
+      "Abigail": [
+        {
+          "event": "Marshall's Home - Abigail",
+          "music": "https://www.youtube.com/watch?v=TGDxmgApj9I"
+        }
+      ],
+      "Jingles": [
+        {
+          "event": "Mailbox's Home - Jingles the Clown",
+          "music": "https://www.youtube.com/watch?v=Xf1YOvtF4ME"
+        }
+      ],
+      "Misc": [
+        {
+          "event": "McDonald's Home",
+          "music": "https://www.youtube.com/watch?v=_Y_f5YcENwI"
+        },
+        {
+          "event": "Misery's Home",
+          "music": "https://www.youtube.com/watch?v=JvuB7qe1SLM"
+        },
+        {
+          "event": "Moon's Home - Arriving to Nobody Home",
+          "music": "https://www.youtube.com/watch?v=iz9b_suFzMs"
+        }
+      ]
+    },
+    "Ambience": {
+      "Ambience": [
+        {
+          "event": "Library Ambience",
+          "music": "https://www.youtube.com/watch?v=2cHAeTBCu5c"
+        },
+        {
+          "event": "Park Ambience",
+          "music": "https://www.youtube.com/watch?v=xqWod3PhWXM&t=267s"
+        },
+        {
+          "event": "Metropolis Ambience",
+          "music": "https://www.youtube.com/watch?v=n_-RjNR2ryE"
+        },
+        {
+          "event": "City Ambience",
+          "music": "https://www.youtube.com/watch?v=iS8mTFuxuvo&t=1097s"
+        },
+        {
+          "event": "Office Ambience",
+          "music": "https://www.youtube.com/watch?v=6sQXSdzk6U4&t=3467s"
+        },
+        {
+          "event": "Restaurant Ambience",
+          "music": "https://www.youtube.com/watch?v=u9-7fVeCPMU"
+        }
+      ]
+    }
+  }
+}

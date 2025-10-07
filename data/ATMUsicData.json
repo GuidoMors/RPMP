@@ -1,0 +1,1020 @@
+{
+  "FOS": {
+    "Woods": {
+      "Woods": [
+        {
+          "event": "Neverwinter Woods",
+          "music": "https://www.youtube.com/watch?v=xWtfo9kuRTU"
+        }
+      ],
+      "Conyberry": [
+        {
+          "event": "Conyberry",
+          "music": "https://www.youtube.com/watch?v=kNiOnMMxak0"
+        },
+        {
+          "event": "Dragon Tower",
+          "music": "https://www.youtube.com/watch?v=kocs8BXOtQg"
+        }
+      ],
+      "Cragmaw": [
+        {
+          "event": "Cragmaw Hideout",
+          "music": "https://www.youtube.com/watch?v=MoYy_Owd-G8"
+        },
+        {
+          "event": "Cragmaw Castle",
+          "music": "https://www.youtube.com/watch?v=JyKFgTYA6Gs"
+        }
+      ]
+    },
+    "Argenbend": {
+      "Argenbend": [
+        {
+          "event": "Argenbend",
+          "music": "https://www.youtube.com/watch?v=9B3nkImD0Q4"
+        },
+        {
+          "event": "Xion-ad-en-Yi's Library",
+          "music": "https://www.youtube.com/watch?v=MBHKQ8khzRw"
+        },
+        {
+          "event": "The Archimancer",
+          "music": "https://www.youtube.com/watch?v=orgikrTCKTc"
+        },
+        {
+          "event": "Mindmole Tunnels",
+          "music": "https://www.youtube.com/watch?v=EGh0e8JkgbY"
+        }
+      ],
+      "Shops": [
+        {
+          "event": "Sticks & Stones",
+          "music": "https://www.youtube.com/watch?v=_MZKbJIhPCk"
+        },
+        {
+          "event": "Cauldron & Wrench",
+          "music": "https://www.youtube.com/watch?v=30lgcIzA5QM"
+        },
+        {
+          "event": "Emporium of Creatures",
+          "music": "https://www.youtube.com/watch?v=2xmfdcbp-yw"
+        },
+        {
+          "event": "Scrollsquire",
+          "music": "https://www.youtube.com/watch?v=1vRA7GugJnw"
+        }
+      ]
+    },
+    "Tombs": {
+      "Tombs": [
+        {
+          "event": "Tombs of the Damned",
+          "music": "https://www.youtube.com/watch?v=6gQKNflgdqU"
+        },
+        {
+          "event": "Tomb of Ta'as",
+          "music": "https://www.youtube.com/watch?v=Zjyqg97lj3w"
+        },
+        {
+          "event": "Tomb of the Gravekeeper",
+          "music": "https://www.youtube.com/watch?v=mzrUxkscQTk"
+        },
+        {
+          "event": "Gauntlgrym",
+          "music": "https://www.youtube.com/watch?v=BnDAFUNZYUU"
+        }
+      ]
+    },
+    "Forge of Spells": {
+      "Forge of Spells": [
+        {
+          "event": "Forge of Spells",
+          "music": "https://www.youtube.com/watch?v=UReZ6Ky5ISc"
+        },
+        {
+          "event": "Dark Cavern Below the Forge",
+          "music": "https://www.youtube.com/watch?v=H9wznkk_WNo"
+        }
+      ]
+    },
+    "Neverwinter": {
+      "Neverwinter": [
+        {
+          "event": "Neverwinter",
+          "music": "https://www.youtube.com/watch?v=Xi3uIEEhxo8&"
+        },
+        {
+          "event": "Driftwood Tavern",
+          "music": "https://www.youtube.com/watch?v=KhYtQW1DMiQ"
+        },
+        {
+          "event": "Tower Sewers",
+          "music": "https://www.youtube.com/watch?v=tPgMANCZod0"
+        }
+      ],
+      "Alcazar": [
+        {
+          "event": "Akantash Alcazar",
+          "music": "https://www.youtube.com/watch?v=YDsBZPKh7A8"
+        },
+        {
+          "event": "Gibberick's Room",
+          "music": "https://www.youtube.com/watch?v=_Mc0OSVrhoE"
+        },
+        {
+          "event": "Taverns",
+          "music": "https://www.youtube.com/watch?v=Q2evIg-aYw8"
+        },
+        {
+          "event": "Gardens & Plazas",
+          "music": "https://www.youtube.com/watch?v=Ph69o2lurEY"
+        }
+      ],
+      "Arcane Consortium": [
+        {
+          "event": "Arcane Consortium",
+          "music": "https://www.youtube.com/watch?v=FrFSDWx82sw"
+        },
+        {
+          "event": "Library of the Arcane Consortium",
+          "music": "https://www.youtube.com/watch?v=yV2ujh-Ms7o"
+        }
+      ]
+    }
+  },
+  "FOS - Combat": {
+    "Woods": {
+      "Argenbend": [
+        {
+          "event": "Scrollsquire Attic",
+          "music": "https://www.youtube.com/watch?v=o_CQR9bnggw"
+        }
+      ],
+      "Conyberry": [
+        {
+          "event": "Vinemind Blight",
+          "music": "https://www.youtube.com/watch?v=uzAoZgn-pD4"
+        },
+        {
+          "event": "The Vinemind",
+          "music": "https://www.youtube.com/watch?v=WahaiTaVw2k"
+        },
+        {
+          "event": "Green Dragon Venomfang",
+          "music": "https://www.youtube.com/watch?v=Rk5oSZ1NrcQ"
+        }
+      ],
+      "Cragmaw": [
+        {
+          "event": "Cragmaw Castle",
+          "music": "https://www.youtube.com/watch?v=P8BAgLNPpDI"
+        },
+        {
+          "event": "Cragmaw Hideout",
+          "music": "https://www.youtube.com/watch?v=_RzmQZpidME"
+        }
+      ]
+    },
+    "Neverwinter": {
+      "Arcane Consortium": [
+        {
+          "event": "Restriced Library",
+          "music": "https://www.youtube.com/watch?v=3eEOKxJej84"
+        }
+      ],
+      "Sewers": [
+        {
+          "event": "Shadow Thieves",
+          "music": "https://www.youtube.com/watch?v=mlR9O7HZhQQ"
+        },
+        {
+          "event": "Slime and Bats",
+          "music": "https://www.youtube.com/watch?v=d27oD0yHgw0"
+        }
+      ]
+    },
+    "Tombs": {
+      "Tombs": [
+        {
+          "event": "Dwarven Golems",
+          "music": "https://www.youtube.com/watch?v=VHwTxYqru7o"
+        },
+        {
+          "event": "Skeletons",
+          "music": "https://www.youtube.com/watch?v=4UhHP3YK5n8"
+        },
+        {
+          "event": "Gargantuan Ice Spider",
+          "music": "https://www.youtube.com/watch?v=VwMQeujstI8"
+        },
+        {
+          "event": "Guardian Prototype",
+          "music": "https://www.youtube.com/watch?v=YWSJkdR49PI"
+        },
+        {
+          "event": "Ankor",
+          "music": "https://www.youtube.com/watch?v=W_Iaw2j3VM4"
+        },
+        {
+          "event": "Tomb of the Gravekeeper Escape",
+          "music": "https://www.youtube.com/watch?v=tmDNbT0D7hc"
+        }
+      ]
+    },
+    "Forge of Spells": {
+      "Forge of Spells": [
+        {
+          "event": "Animated Adamantium",
+          "music": "https://www.youtube.com/watch?v=c8cJP6O9iRI"
+        },
+        {
+          "event": "Master Construct",
+          "music": "https://www.youtube.com/watch?v=JVGmdXONJKg"
+        },
+        {
+          "event": "Gargoyles Below the Forge",
+          "music": "https://www.youtube.com/watch?v=Vt5Mxm7BPhM"
+        },
+        {
+          "event": "Akantash Steals the Forge",
+          "music": "https://www.youtube.com/watch?v=awFy4h6XMrQ"
+        }
+      ]
+    },
+    "Generic": {
+      "Generic": [
+        {
+          "event": "Cragmaw Ambush",
+          "music": "https://www.youtube.com/watch?v=WQ84Dt5M0j0"
+        },
+        {
+          "event": "Venomfang World Encounter",
+          "music": "https://www.youtube.com/watch?v=_RzmQZpidME"
+        },
+        {
+          "event": "Goblin Gang Encounter",
+          "music": "https://www.youtube.com/watch?v=Rk5oSZ1NrcQ"
+        }
+      ]
+    }
+  },
+  "AA": {
+    "Woods": {
+      "Woods": [
+        {
+          "event": "Neverwinter Woods",
+          "music": "https://www.youtube.com/watch?v=xWtfo9kuRTU"
+        }
+      ],
+      "Conyberry": [
+        {
+          "event": "Conyberry",
+          "music": "https://www.youtube.com/watch?v=kNiOnMMxak0"
+        },
+        {
+          "event": "Dragon Tower",
+          "music": "https://www.youtube.com/watch?v=kocs8BXOtQg"
+        }
+      ],
+      "Cragmaw": [
+        {
+          "event": "Cragmaw Castle",
+          "music": "https://www.youtube.com/watch?v=JyKFgTYA6Gs"
+        }
+      ]
+    },
+    "Argenbend": {
+      "Argenbend": [
+        {
+          "event": "Argenbend",
+          "music": "https://www.youtube.com/watch?v=9B3nkImD0Q4"
+        },
+        {
+          "event": "Xion-ad-en-Yi's Library",
+          "music": "https://www.youtube.com/watch?v=MBHKQ8khzRw"
+        },
+        {
+          "event": "The Archimancer",
+          "music": "https://www.youtube.com/watch?v=orgikrTCKTc"
+        },
+        {
+          "event": "Mindmole Tunnels",
+          "music": "https://www.youtube.com/watch?v=EGh0e8JkgbY"
+        }
+      ],
+      "Shops": [
+        {
+          "event": "Sticks & Stones",
+          "music": "https://www.youtube.com/watch?v=_MZKbJIhPCk"
+        },
+        {
+          "event": "Cauldron & Wrench",
+          "music": "https://www.youtube.com/watch?v=30lgcIzA5QM"
+        },
+        {
+          "event": "Emporium of Creatures",
+          "music": "https://www.youtube.com/watch?v=2xmfdcbp-yw"
+        },
+        {
+          "event": "Scrollsquire",
+          "music": "https://www.youtube.com/watch?v=1vRA7GugJnw"
+        }
+      ]
+    },
+    "Tombs": {
+      "Tombs": [
+        {
+          "event": "Tombs of the Damned",
+          "music": "https://www.youtube.com/watch?v=6gQKNflgdqU"
+        },
+        {
+          "event": "Tomb of Ta'as",
+          "music": "https://www.youtube.com/watch?v=Zjyqg97lj3w"
+        },
+        {
+          "event": "Tomb of the Gravekeeper",
+          "music": "https://www.youtube.com/watch?v=mzrUxkscQTk"
+        }
+      ],
+      "Gauntlgrym": [
+        {
+          "event": "Gauntlgrym",
+          "music": "https://www.youtube.com/watch?v=BnDAFUNZYUU"
+        },
+        {
+          "event": "Barazgarad Hold",
+          "music": "https://www.youtube.com/watch?v=sr1vHFL1qzo"
+        }
+      ]
+    },
+    "Forge of Spells": {
+      "Forge of Spells": [
+        {
+          "event": "Forge of Spells",
+          "music": "https://www.youtube.com/watch?v=UReZ6Ky5ISc"
+        },
+        {
+          "event": "Dark Cavern Below the Forge",
+          "music": "https://www.youtube.com/watch?v=H9wznkk_WNo"
+        }
+      ]
+    },
+    "Neverwinter": {
+      "Neverwinter": [
+        {
+          "event": "Neverwinter",
+          "music": "https://www.youtube.com/watch?v=Xi3uIEEhxo8&"
+        },
+        {
+          "event": "Driftwood Tavern",
+          "music": "https://www.youtube.com/watch?v=KhYtQW1DMiQ"
+        },
+        {
+          "event": "Tower Sewers",
+          "music": "https://www.youtube.com/watch?v=tPgMANCZod0"
+        }
+      ],
+      "Alcazar": [
+        {
+          "event": "Akantash Alcazar",
+          "music": "https://www.youtube.com/watch?v=YDsBZPKh7A8"
+        },
+        {
+          "event": "Gibberick's Room",
+          "music": "https://www.youtube.com/watch?v=_Mc0OSVrhoE"
+        },
+        {
+          "event": "Taverns",
+          "music": "https://www.youtube.com/watch?v=Q2evIg-aYw8"
+        },
+        {
+          "event": "Gardens & Plazas",
+          "music": "https://www.youtube.com/watch?v=Ph69o2lurEY"
+        }
+      ],
+      "Arcane Consortium": [
+        {
+          "event": "Arcane Consortium",
+          "music": "https://www.youtube.com/watch?v=FrFSDWx82sw"
+        },
+        {
+          "event": "Library of the Arcane Consortium",
+          "music": "https://www.youtube.com/watch?v=yV2ujh-Ms7o"
+        }
+      ]
+    },
+    "The Heist": {
+      "Part 1": [
+        {
+          "event": "Start of the Heist",
+          "music": "https://www.youtube.com/watch?v=bGWqosZLwGQ"
+        }
+      ],
+      "Part 2": [
+        {
+          "event": "Rooms of Contemplation and Atonement",
+          "music": "https://www.youtube.com/watch?v=3eEOKxJej84"
+        }
+      ],
+      "Part 3": [
+        {
+          "event": "The Hall of the Guardians",
+          "music": "https://www.youtube.com/watch?v=Ja1VyMvx_8g"
+        }
+      ],
+      "Part 4": [
+        {
+          "event": "Thieves' Torment",
+          "music": "https://www.youtube.com/watch?v=9teCuBX49xg"
+        }
+      ],
+      "Part 5": [
+        {
+          "event": "Alcazar Library & Laboratory",
+          "music": "https://www.youtube.com/watch?v=GqKVEti5jAo"
+        }
+      ],
+      "Part 6": [
+        {
+          "event": "Room of Teleportation",
+          "music": "https://www.youtube.com/watch?v=EGh0e8JkgbY"
+        }
+      ],
+      "Part 7": [
+        {
+          "event": "Bridge of Change",
+          "music": "https://www.youtube.com/watch?v=2wgnVbUkDRQ"
+        }
+      ],
+      "Part 8": [
+        {
+          "event": "Akantash's Study",
+          "music": "https://www.youtube.com/watch?v=Zjyqg97lj3w"
+        }
+      ]
+    }
+  },
+  "AA - Combat": {
+    "Woods": {
+      "Argenbend": [
+        {
+          "event": "Scrollsquire Attic",
+          "music": "https://www.youtube.com/watch?v=o_CQR9bnggw"
+        }
+      ],
+      "Conyberry": [
+        {
+          "event": "Vinemind Blight",
+          "music": "https://www.youtube.com/watch?v=uzAoZgn-pD4"
+        },
+        {
+          "event": "The Vinemind",
+          "music": "https://www.youtube.com/watch?v=WahaiTaVw2k"
+        },
+        {
+          "event": "Green Dragon Venomfang",
+          "music": "https://www.youtube.com/watch?v=Rk5oSZ1NrcQ"
+        }
+      ],
+      "Cragmaw": [
+        {
+          "event": "Cragmaw Castle",
+          "music": "https://www.youtube.com/watch?v=P8BAgLNPpDI"
+        }
+      ]
+    },
+    "Neverwinter": {
+      "Arcane Consortium": [
+        {
+          "event": "Restriced Library",
+          "music": "https://www.youtube.com/watch?v=3eEOKxJej84"
+        }
+      ],
+      "Sewers": [
+        {
+          "event": "Shadow Thieves",
+          "music": "https://www.youtube.com/watch?v=mlR9O7HZhQQ"
+        },
+        {
+          "event": "Slime and Bats",
+          "music": "https://www.youtube.com/watch?v=d27oD0yHgw0"
+        }
+      ]
+    },
+    "Tombs": {
+      "Tombs": [
+        {
+          "event": "Dwarven Golems",
+          "music": "https://www.youtube.com/watch?v=VHwTxYqru7o"
+        },
+        {
+          "event": "Skeletons",
+          "music": "https://www.youtube.com/watch?v=4UhHP3YK5n8"
+        },
+        {
+          "event": "Gargantuan Ice Spider",
+          "music": "https://www.youtube.com/watch?v=VwMQeujstI8"
+        },
+        {
+          "event": "Ankor",
+          "music": "https://www.youtube.com/watch?v=W_Iaw2j3VM4"
+        },
+        {
+          "event": "Tomb of the Gravekeeper Escape",
+          "music": "https://www.youtube.com/watch?v=tmDNbT0D7hc"
+        }
+      ],
+      "Forge of Spells": [
+        {
+          "event": "Gargoyles Below the Forge",
+          "music": "https://www.youtube.com/watch?v=Vt5Mxm7BPhM"
+        }
+      ]
+    },
+    "Generic": {
+      "Generic": [
+        {
+          "event": "Cragmaw Ambush",
+          "music": "https://www.youtube.com/watch?v=WQ84Dt5M0j0"
+        },
+        {
+          "event": "Venomfang World Encounter",
+          "music": "https://www.youtube.com/watch?v=_RzmQZpidME"
+        },
+        {
+          "event": "Goblin Gang Encounter",
+          "music": "https://www.youtube.com/watch?v=Rk5oSZ1NrcQ"
+        }
+      ]
+    },
+    "The Heist": {
+      "The Heist": [
+        {
+          "event": "Room of Contemplation (Grasp of the Gargoyles)",
+          "music": "https://www.youtube.com/watch?v=mKhIvse5GkU"
+        },
+        {
+          "event": "Room of Atonement",
+          "music": "https://www.youtube.com/watch?v=dsLHf9X8P8w"
+        },
+        {
+          "event": "Battle in the Library",
+          "music": "https://www.youtube.com/watch?v=HvDwDk-i6KQ"
+        },
+        {
+          "event": "Battle in the Teleportation Room",
+          "music": "https://www.youtube.com/watch?v=WEmsMlTR4y0"
+        },
+        {
+          "event": "The Alcazar Guardian",
+          "music": "https://www.youtube.com/watch?v=YWSJkdR49PI"
+        },
+        {
+          "event": "The Duel with Akantash",
+          "music": "https://www.youtube.com/watch?v=mVKPvspyyyQ"
+        }
+      ]
+    }
+  },
+  "HOC": {
+    "Urchin": {
+      "Greater Urchin": [
+        {
+          "event": "Urchin's Expanse",
+          "music": "https://www.youtube.com/watch?v=bz6jN746NOk"
+        },
+        {
+          "event": "Cavern of Twised Eyes",
+          "music": "https://www.youtube.com/watch?v=jCm_w1CUbu0"
+        },
+        {
+          "event": "Meeting the Bandits, Durny and Tyrowyr",
+          "music": "https://www.youtube.com/watch?v=ZQWIZNkJSBk"
+        },
+        {
+          "event": "Cliffside Ravine",
+          "music": "https://www.youtube.com/watch?v=nOv18iJbAug"
+        },
+        {
+          "event": "Clockwork Laboratory",
+          "music": "https://www.youtube.com/watch?v=UliYVYzIzDQ"
+        }
+      ],
+      "Urchin": [
+        {
+          "event": "Urchin",
+          "music": "https://www.youtube.com/watch?v=Xf1YOvtF4ME"
+        },
+        {
+          "event": "Tavern: Ye Olde Gauntlet",
+          "music": "https://www.youtube.com/watch?v=50zhztSIYTU"
+        },
+        {
+          "event": "Temple of Echo",
+          "music": "https://www.youtube.com/watch?v=iqkQRgGdAPo"
+        },
+        {
+          "event": "Urchin's Castle",
+          "music": "https://www.youtube.com/watch?v=XHPjpflNssY"
+        }
+      ]
+    },
+    "Fungal Forest": {
+      "Fungal Forest": [
+        {
+          "event": "Fungal Forest",
+          "music": "https://www.youtube.com/watch?v=SXMlpv0IgTQ"
+        },
+        {
+          "event": "Gibberick's Abode",
+          "music": "https://www.youtube.com/watch?v=Lca55oNfe3g"
+        }
+      ],
+      "The Island": [
+        {
+          "event": "Cathedral of the Change",
+          "music": "https://www.youtube.com/watch?v=DXSrE3yt2n8"
+        },
+        {
+          "event": "Cavern of the Ancients",
+          "music": "https://www.youtube.com/watch?v=6TTYgRBXk0g"
+        },
+        {
+          "event": "Anvil of the Ancients",
+          "music": "https://www.youtube.com/watch?v=0qzSXiU3AaY"
+        }
+      ]
+    },
+    "Holloways": {
+      "Holloways": [
+        {
+          "event": "Holloways",
+          "music": "https://www.youtube.com/watch?v=aoM7GlnA7Uw"
+        },
+        {
+          "event": "Crypt of Cathea",
+          "music": "https://www.youtube.com/watch?v=tUt84LyH2JI"
+        },
+        {
+          "event": "Tomb of Nagash",
+          "music": "https://www.youtube.com/watch?v=C75z9avAKjY"
+        },
+        {
+          "event": "Imperial Mines and the Extrastasis",
+          "music": "https://www.youtube.com/watch?v=QqCBe5XL2mc"
+        },
+        {
+          "event": "Under-Mychonis",
+          "music": "https://www.youtube.com/watch?v=TPORs9yM9yY"
+        }
+      ]
+    },
+    "Koyaanisqatsi": {
+      "Koyaanisqatsi": [
+        {
+          "event": "Koyaanisqatsi",
+          "music": "https://www.youtube.com/watch?v=Cmq-ab2rjc8"
+        },
+        {
+          "event": "Camp of Rasachael",
+          "music": "https://www.youtube.com/watch?v=4T772waI5UU"
+        },
+        {
+          "event": "Caravania",
+          "music": "https://www.youtube.com/watch?v=UxToWJV9gsI"
+        },
+        {
+          "event": "Imperial Emporium",
+          "music": "https://www.youtube.com/watch?v=hswaCxxYpvE"
+        },
+        {
+          "event": "Wandering Trader",
+          "music": "https://www.youtube.com/watch?v=IE41r8X_C3M"
+        }
+      ]
+    },
+    "Mychonis": {
+      "Mychonis": [
+        {
+          "event": "Mychonis",
+          "music": "https://www.youtube.com/watch?v=5O3n0mC8Sg"
+        },
+        {
+          "event": "Grand Guilds of the Golden Hand",
+          "music": "https://www.youtube.com/watch?v=YJdrFf5r7C8"
+        },
+        {
+          "event": "Grand Library of Michonis",
+          "music": "https://www.youtube.com/watch?v=zz3VN8Jto28"
+        },
+        {
+          "event": "Temple of the Allfaith",
+          "music": "https://www.youtube.com/watch?v=NvAS0eFUTL0"
+        },
+        {
+          "event": "Other Grand Buildings",
+          "music": "https://www.youtube.com/watch?v=k9jYvfd9qk4"
+        }
+      ],
+      "Event": [
+        {
+          "event": "Trial at Mychonius",
+          "music": "https://www.youtube.com/watch?v=Aks3MdEJYqk"
+        },
+        {
+          "event": "The Rellion Marches Up Mychonis",
+          "music": "https://www.youtube.com/watch?v=c-9KNscPGeY"
+        },
+        {
+          "event": "Mychonis Awakens",
+          "music": "https://www.youtube.com/watch?v=7ZVm9CQqufk"
+        },
+        {
+          "event": "Mychonis' Judgement",
+          "music": "https://www.youtube.com/watch?v=mZXANRwlum0"
+        }
+      ],
+      "After-Mychonis": [
+        {
+          "event": "The Ruins of After-Mychonis",
+          "music": "https://www.youtube.com/watch?v=YcYqmEIyy1M"
+        }
+      ],
+      "Pinnacle": [
+        {
+          "event": "Crypts of the Pinnacle",
+          "music": "https://www.youtube.com/watch?v=Lud6p05ZiKU"
+        },
+        {
+          "event": "Sneaking into the Pinnacle",
+          "music": "https://www.youtube.com/watch?v=t9byPyKh2rE"
+        }
+      ],
+      "Argot": [
+        {
+          "event": "Argot",
+          "music": "https://www.youtube.com/watch?v=q3c5u9xPNeI"
+        },
+        {
+          "event": "World Serpent Shade Inn",
+          "music": "https://www.youtube.com/watch?v=psT_XFDTjHs"
+        }
+      ],
+      "Circus": [
+        {
+          "event": "Great Circus of Gigglewick",
+          "music": "https://www.youtube.com/watch?v=2PNX8arJLoU"
+        },
+        {
+          "event": "The Show",
+          "music": "https://www.youtube.com/watch?v=_B0CyOAO8y0"
+        },
+        {
+          "event": "Meeting with Giganto Gigglewick",
+          "music": "https://www.youtube.com/watch?v=sIVBt1BuGes"
+        }
+      ]
+    },
+    "The Plateau": {
+      "The Plateau": [
+        {
+          "event": "The Plateau",
+          "music": "https://www.youtube.com/watch?v=0uo2NkLgRPQ"
+        },
+        {
+          "event": "Phantamora",
+          "music": "https://www.youtube.com/watch?v=n1j0zwP9Fbs"
+        },
+        {
+          "event": "Temple of the Gone",
+          "music": "https://www.youtube.com/watch?v=Wlt6xt4R23Q"
+        }
+      ],
+      "Leydestown": [
+        {
+          "event": "First Meeting with a Leydes",
+          "music": "https://www.youtube.com/watch?v=On_p0JLNIN0"
+        },
+        {
+          "event": "Leydestown",
+          "music": "https://www.youtube.com/watch?v=D3xtj-QnM2s"
+        }
+      ]
+    },
+    "Abandoned City": {
+      "Abandoned City": [
+        {
+          "event": "Abandoned City of the Harlequins",
+          "music": "https://www.youtube.com/watch?v=PjLJywigfCw"
+        },
+        {
+          "event": "Trickster's Castle",
+          "music": "https://www.youtube.com/watch?v=lwjaUrZCBoc"
+        },
+        {
+          "event": "Warrens of the Cutthroats",
+          "music": "https://www.youtube.com/watch?v=wgiUBD_L-cE"
+        },
+        {
+          "event": "Church of Latter-day Saints",
+          "music": "https://www.youtube.com/watch?v=aej9jqJ9f3g"
+        }
+      ],
+      "Harlequin Halls": [
+        {
+          "event": "The Desolate Banquet Hall",
+          "music": "https://www.youtube.com/watch?v=LAO0LoXDQLs"
+        },
+        {
+          "event": "Harlequin Halls",
+          "music": "https://www.youtube.com/watch?v=MtiVeQHbiGg"
+        }
+      ],
+      "Strongstabbas": [
+        {
+          "event": "Strongstabba Camp",
+          "music": "https://www.youtube.com/watch?v=Jzkv5mzR-j0"
+        },
+        {
+          "event": "Meeting Droop Again",
+          "music": "Abandoned City"
+        }
+      ]
+    }
+  },
+  "HOC - Combat": {
+    "Generic": {
+      "Generic": [
+        {
+          "event": "Rapid Generic Combat Music",
+          "music": "https://www.youtube.com/watch?v=c8cJP6O9iRI"
+        },
+        {
+          "event": "Bombastic Generic Combat Music",
+          "music": "https://www.youtube.com/watch?v=im0vK4dWL6E"
+        },
+        {
+          "event": "Demonic Encounters (Taloch + Bhaalspawn)",
+          "music": "https://www.youtube.com/watch?v=60j2oHTpO5k"
+        }
+      ]
+    },
+    "Mychonis": {
+      "Argot": [
+        {
+          "event": "Fighting Ring",
+          "music": "https://www.youtube.com/watch?v=tl1oLy1spOg"
+        }
+      ],
+      "Pinnacle": [
+        {
+          "event": "Thuran-di-Tharan",
+          "music": "https://www.youtube.com/watch?v=7fE6V4dhGrM"
+        },
+        {
+          "event": "Siege of the Pinnacle",
+          "music": "https://www.youtube.com/watch?v=FNSdFr8raco"
+        },
+        {
+          "event": "Pinnacle Crypts",
+          "music": "https://www.youtube.com/watch?v=CsW72KIOd8U"
+        }
+      ]
+    },
+    "Koyaanisqatsi": {
+      "Koyaanisqatsi": [
+        {
+          "event": "Black Dragon Koyaanisqatsi",
+          "music": "https://www.youtube.com/watch?v=CsW72KIOd8U"
+        },
+        {
+          "event": "Below Koyaanisqatsi",
+          "music": "https://www.youtube.com/watch?v=i4UZJlqPezw"
+        },
+        {
+          "event": "Xazad",
+          "music": "https://www.youtube.com/watch?v=pHUHdprKIwo"
+        },
+        {
+          "event": "Dakkerlak",
+          "music": "https://www.youtube.com/watch?v=u-Bg2ok9Rp8"
+        },
+        {
+          "event": "War Between the Imperails and the Harbinger",
+          "music": "https://www.youtube.com/watch?v=ILB2zdvSJY0"
+        }
+      ],
+      "Imperial Emporium": [
+        {
+          "event": "Behemoth Panzer",
+          "music": "https://www.youtube.com/watch?v=5eSYC7FFfRw"
+        }
+      ]
+    },
+    "Urchin": {
+      "Greater Urchin": [
+        {
+          "event": "Cavern of Twisted Eyes",
+          "music": "https://www.youtube.com/watch?v=fqmJ5AQqC6E"
+        },
+        {
+          "event": "Combat With Durny",
+          "music": "https://www.youtube.com/watch?v=iV3bDlIJjEw"
+        }
+      ]
+    },
+    "Fungal Forest": {
+      "Fungal Forest": [
+        {
+          "event": "Phase Spider",
+          "music": "https://www.youtube.com/watch?v=6ktrSaAEwYY"
+        },
+        {
+          "event": "First Encounter With Sloon",
+          "music": "https://www.youtube.com/watch?v=jFGq3nwApvA"
+        }
+      ],
+      "The Island": [
+        {
+          "event": "Aura of Thunder",
+          "music": "https://www.youtube.com/watch?v=cw9zaG4_mdw"
+        }
+      ]
+    },
+    "Holloways": {
+      "Holloways": [
+        {
+          "event": "Tomb of Nagash",
+          "music": "https://www.youtube.com/watch?v=Lxhvesbwz3E"
+        },
+        {
+          "event": "Ancient Elemental of the Night",
+          "music": "https://www.youtube.com/watch?v=A48QqpWKWG8"
+        },
+        {
+          "event": "Skaven of Under-mychonis",
+          "music": "https://www.youtube.com/watch?v=0JVzEvrYk0E"
+        },
+        {
+          "event": "Council of Ikitch",
+          "music": "https://www.youtube.com/watch?v=Si5F6f6t9NM"
+        }
+      ]
+    },
+    "Abandoned City": {
+      "Harlequin Halls": [
+        {
+          "event": "Elevator to the Harlequin Halls",
+          "music": "https://www.youtube.com/watch?v=2YvKB9Y6Zj4"
+        }
+      ],
+      "Abandoned City": [
+        {
+          "event": "Up in Trickster's Castle",
+          "music": "https://www.youtube.com/watch?v=KWYEbz90iYs"
+        },
+        {
+          "event": "Below in Trickster's Castle",
+          "music": "https://www.youtube.com/watch?v=zpFsBze1iMo"
+        },
+        {
+          "event": "The Warrens",
+          "music": "https://www.youtube.com/watch?v=SeDmQABgB0U"
+        },
+        {
+          "event": "Grimaldi's Tower",
+          "music": "https://www.youtube.com/watch?v=Zoy61mlYAAo"
+        }
+      ]
+    },
+    "The Plateau": {
+      "The Plateau": [
+        {
+          "event": "Phantamora",
+          "music": "https://www.youtube.com/watch?v=SiyOajnJnTg"
+        },
+        {
+          "event": "Combat with the Gone",
+          "music": "https://www.youtube.com/watch?v=KfhQxujUf0c"
+        }
+      ]
+    },
+    "Events": {
+      "Events": [
+        {
+          "event": "Banishing the Heart of Akantash from the Diaspora",
+          "music": "https://www.youtube.com/watch?v=pFy6S-Cd9vA"
+        },
+        {
+          "event": "Dislodging the Heart of Akantash",
+          "music": "https://www.youtube.com/watch?v=TJ6ISq7692k"
+        },
+        {
+          "event": "End of the Campaign",
+          "music": "https://www.youtube.com/watch?v=YTyH3GT_LVg"
+        }
+      ]
+    }
+  }
+}
