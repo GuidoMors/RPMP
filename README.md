@@ -3,6 +3,7 @@ BEFORE FIRST RUN:
 -setup spreadsheat.json
 
 SETTING UP SPREADSHEET.JSON
+
 APIKEY: request an api key for your own google environment https://support.google.com/googleapi/answer/6158862?hl=en
 
 SPREADSHEET ID: you can get the spreadsheet id from the google drive url.
