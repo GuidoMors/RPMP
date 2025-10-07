@@ -86,6 +86,7 @@ function getLocalMusicFile(shorthand) {
         console.log(`Loaded ${filename} locally`);
         return JSON.parse(data);
     } catch (err) {
+        const filename = shorthand + "MusicData.json";
         console.warn(`No local file found for ${filename}`);
         return null;
     }
@@ -151,9 +152,16 @@ function saveJsonToFile(data, fileName) {
         filePath = path.join(__dirname, fileName);
     }
 
+    const dir = path.dirname(filePath);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+
     fs.writeFile(filePath, data, 'utf8', (err) => {
         if (err) {
             console.error('Error saving JSON file:', err);
+        } else {
+            console.log(`Saved JSON file: ${filePath}`);
         }
     });
 }
