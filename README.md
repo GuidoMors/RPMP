@@ -9,7 +9,7 @@ The music comes from google spreadsheets you can configure yourself with links t
 
 -create spreadsheet containing your music using the following example: https://docs.google.com/spreadsheets/d/1alcp3kRT8cPaMXm4fr4xqSQfg-RSK8kp6Jkb5-u2GcQ/edit?gid=0#gid=0
 
--setup spreadsheat.json
+-setup spreadsheats.json
 
 -do npm install to get the node modules
 
@@ -17,7 +17,7 @@ The music comes from google spreadsheets you can configure yourself with links t
 
 
 
-**SETTING UP SPREADSHEET.JSON**
+**SETTING UP SPREADSHEETS.JSON**
 
 APIKEY: request an api key for your own google environment https://support.google.com/googleapi/answer/6158862?hl=en
 
