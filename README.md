@@ -14,9 +14,9 @@ The music comes from google spreadsheets you can configure yourself with links t
 
 **SETUP:**
 
--do npm install to get the node modules
+-open console, do npm install inside the RPMP folder to get the node modules
 
--create spreadsheet containing your music using the following example: https://docs.google.com/spreadsheets/d/1alcp3kRT8cPaMXm4fr4xqSQfg-RSK8kp6Jkb5-u2GcQ/edit?gid=0#gid=0
+-create a google spreadsheet containing your music using the following example: https://docs.google.com/spreadsheets/d/1alcp3kRT8cPaMXm4fr4xqSQfg-RSK8kp6Jkb5-u2GcQ/edit?gid=0#gid=0
 
 -setup spreadsheats.json (see below)
 
@@ -34,10 +34,12 @@ For example if the url is: https://docs.google.com/spreadsheets/d/1alcp3kRT8cPaM
 
 the spreadsheet has id:                                           1alcp3kRT8cPaMXm4fr4xqSQfg-RSK8kp6Jkb5-u2GcQ
 
-OTHER FIELDS: the name and shorthand of the spreadsheat can be anything. The name of a tab has to be the exact name that it has in the google drive spreadsheet. You can find the tab names at the bottom while having the spreadsheet open.
+OTHER FIELDS: the name and shorthand of the spreadsheat can be anything, but should be unique. The name of a tab has to be the exact name that it has in the google drive spreadsheet. You can find the tab names at the bottom while having the spreadsheet open.
 
 
 
 **LAUNCHING RPMP:**
 
 execute run.bat
+
+go to localhost in the browser

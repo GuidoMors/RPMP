@@ -107,7 +107,7 @@ async function googleAPIFetchMusicData(sheet) {
         var musicFilePath = path.join(__dirname, "data", sheet.shorthand+"MusicData.json");
         saveJsonToFile(JSON.stringify(mergedData, null, 2), musicFilePath);
 
-        console.log(sheet.name," Updated with Google API");
+        console.log(sheet.name, "updated with Google API");
 
         return mergedData;
 
