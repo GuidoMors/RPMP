@@ -122,6 +122,19 @@ th, td {
     border-radius: 3px;
 }
 
+.playlist-btn {
+    padding: 10px 20px; 
+    position:absolute;
+    left: 1.2em;
+    bottom: 6em;
+}
+
+.playlist-btn:hover {
+    background-color: orange;
+    border-color: orange;
+    border-radius: 3px;
+}
+
 .google-drive-row {
     background-color: grey ;
 }
@@ -154,4 +167,17 @@ th, td {
     background-color: orange;
     border-color: orange;
     border-radius: 3px;
+}
+
+.category-thead {
+    width: 100%;
+    display: inline-table;
+}
+
+.category-summary::marker {
+    font-size: 0;
+}
+
+.category-details {
+    width: 100%;
 }

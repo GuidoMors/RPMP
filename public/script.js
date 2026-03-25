@@ -1,32 +1,65 @@
+const socket = io();
 var musicData = null;
 var allPlayers = [];
+var MY_MARKED_MUSIC = [];
+
+socket.on('synchMarkedSongs', (markedSongs) => {
+    console.log("received Songs", markedSongs);
+    MY_MARKED_MUSIC = markedSongs;
+    clearMarkedSongs();
+    markMarkedSongs();
+
+    var currentSessionAct = sessionStorage.getItem("act");
+    if (currentSessionAct == "playlist") {
+        drawPlaylist();
+    }
+});
 
 const COLORS = [
     "#FF6B6B",      //orange
     "#FFE66D",      //yellow
     "#4472CA",      //blue
-    "#4ECDC4",      //cyan
+    "#13867fff",    //cyan
     "#e90c0cff",    //red  
-    "#a6eb13ff",    //green
+    "#75a805ff",    //green
     "#a36206ff",    //brown
-    "#748f50ff",    //olive
+    "#486422ff",    //olive
     "#6A0572",      //burgundy
-    "#F72585",      //pink
-    "#7208ebff",    //purple
+    "#8d0d47ff",    //pink
+    "#4e1392ff",    //purple
     "#7e1414ff"     //maroon
   ];
   
 
-// on load fetches music from server and draws main menu
-fetch('/api/music')
-  .then(res => res.json())
-  .then(data => {
-    musicData = safeParse(data);
-    drawMainMenu();
-  });
+// on load fetches music from server and draws current state
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        fetch('/api/music')
+            .then(res => res.json())
+            .then(data => {
+                musicData = safeParse(data);
+                drawCurrentState();
+            });
+    }, 100);
+});
 
+
+function drawCurrentState() {
+    var currentSessionAct = sessionStorage.getItem("act");
+    var currentSheetName = sessionStorage.getItem("sheetName");
+
+    if (!currentSessionAct || !currentSheetName || currentSessionAct == "main-menu"){
+        drawMainMenu();
+    } else if (currentSessionAct == "playlist") {
+        drawPlaylist();
+    }else {
+        drawAct(currentSessionAct, currentSheetName);
+    }
+    
+}
 
 function drawMainMenu() {
+    sessionStorage.setItem("act", "main-menu");
     const mainMenu = document.getElementById('main-menu');
     const actView = document.getElementById('act-view');
 
@@ -39,18 +72,14 @@ function drawMainMenu() {
 
     if (!musicData) return;
 
-    // Loop through each spreadsheet in musicData
     Object.entries(musicData).forEach(([sheetName, sheetData]) => {
-        // Create a container div for this spreadsheet
         const sheetDiv = document.createElement('div');
         sheetDiv.classList.add('sheet-container');
 
-        // Spreadsheet title
         const title = document.createElement('h2');
         title.textContent = sheetName;
         sheetDiv.appendChild(title);
 
-        // Create buttons for acts in this spreadsheet
         Object.entries(sheetData)
             .sort(([a], [b]) => a.localeCompare(b))
             .forEach(([act, events]) => {
@@ -61,19 +90,34 @@ function drawMainMenu() {
                 sheetDiv.appendChild(btn);
             });
 
-        // Append this spreadsheet section to the main menu
         mainMenu.appendChild(sheetDiv);
     });
 
+    drawPlaylistButton();
+
     drawRefreshButton();
 }
-
 
 function clearViews(){
     var mainMenu = document.getElementById('main-menu');
     var actView = document.getElementById('act-view');
     mainMenu.innerHTML = '';
     actView.innerHTML = '';
+}
+
+function clearMarkedSongs(){
+    document.querySelectorAll('tr').forEach(row => {
+        row.classList.remove('marked');
+    });
+}
+
+function markMarkedSongs(){
+        MY_MARKED_MUSIC.forEach(([music, event]) => {
+        const row = Array.from(document.querySelectorAll('tr')).find(
+            r => r.dataset.music === music && r.dataset.event === event
+        );
+        if (row) row.classList.add('marked');
+    });
 }
 
 function drawRefreshButton(){
@@ -106,12 +150,25 @@ function drawRefreshButton(){
     mainMenu.appendChild(refreshBtn);
 }
 
-function drawAct(actName, sheetName) {
-    console.log(actName, sheetName);
+function drawPlaylistButton(){
     var mainMenu = document.getElementById('main-menu');
-    var actView = document.getElementById('act-view');
+    var playlistButton = document.createElement('button');
+    playlistButton.textContent = 'Your Playlist';
+    playlistButton.className = 'playlist-btn';
+    playlistButton.addEventListener('click', () => drawPlaylist());
+    mainMenu.appendChild(playlistButton);
+}
+
+function drawAct(actName, sheetName) {
+
+    sessionStorage.setItem("act", actName);
+    sessionStorage.setItem("sheetName", sheetName);
+    console.log(actName, sheetName);
 
     clearViews();
+
+    var mainMenu = document.getElementById('main-menu');
+    var actView = document.getElementById('act-view');
 
     allPlayers = [];
     document.title = actName;
@@ -135,27 +192,36 @@ function drawAct(actName, sheetName) {
     var actCounter = 0;
 
     Object.entries(musicData[sheetName][actName]).forEach(([type, subtypes]) => {
-        var typeDiv = document.createElement('div');
-        typeDiv.classList.add('type-divider');
+        
+        var details = document.createElement('details');
+        details.open = true;
+        details.classList.add('category-details');
+        flexcontainer.appendChild(details);
+
+        var summary = document.createElement('summary');
+        summary.classList.add('category-summary');
+        details.appendChild(summary);
+        
         var table = document.createElement('table');
         table.id = 'events-table-' + type;
-
+        
         var thead = document.createElement('thead');
+        thead.classList.add('category-thead');
+
         var headerRow = document.createElement('tr');
-        [type, "Subtype", 'Music'].forEach(text => {
-            const th = document.createElement('th');
-            th.style.backgroundColor = shuffledColors[actCounter];
-            th.textContent = text;
-            headerRow.appendChild(th);
-        });
+        
+        const th = document.createElement('th');
+        th.style.backgroundColor = shuffledColors[actCounter];
+        th.textContent = type;
+        headerRow.appendChild(th);
+
         thead.appendChild(headerRow);
-        table.appendChild(thead);
+        summary.appendChild(thead);
 
         var tbody = document.createElement('tbody');
         table.appendChild(tbody);
 
-        typeDiv.appendChild(table);
-        flexcontainer.appendChild(typeDiv);
+        details.appendChild(table);
 
         var counterStart = playersCounter;
 
@@ -163,10 +229,24 @@ function drawAct(actName, sheetName) {
             items.forEach((item, index) => {
                 var row = document.createElement('tr');
 
+                row.dataset.music = item.music; 
+                row.dataset.event = item.event;
+
+                var isMarked = MY_MARKED_MUSIC.some(
+                    pair => pair[0] === item.music && pair[1] === item.event
+                );
+                
+                if (isMarked) {
+                    row.classList.add("marked");
+                } else {
+                    row.classList.remove("marked");
+                }
+
                 row.addEventListener("contextmenu", (e) => {
                     e.preventDefault(); 
                     row.classList.remove('paused');
-                    row.classList.toggle("marked");
+                    console.log("emit markSong");
+                    socket.emit('markSong', item.music, item.event);
                 });
 
                 row.addEventListener("click", () => {
@@ -217,7 +297,7 @@ function drawAct(actName, sheetName) {
                 if (item.music.includes("youtube")) {
                     musicCell.classList.add('youtube');
                     row.classList.add('youtube-row');
-                    makeYoutubeCell(item, playerDiv.id, item.event);
+                    makeYoutubeCell(item.music, playerDiv.id);
                 } else if (item.music.includes("drive.google")) {
                     musicCell.classList.add('google-drive');
                     playerDiv.classList.add('google-drive-player');
@@ -229,9 +309,16 @@ function drawAct(actName, sheetName) {
         });
 
         var addedPlayers = playersCounter - counterStart + 1;
-        typeDiv.style.gridRow = 'span '+addedPlayers;
+        details.style.gridRow = 'span '+addedPlayers;
+        details.addEventListener('toggle', () => {
+            if (details.open) {
+                details.style.gridRow = 'span ' + addedPlayers; // expanded
+            } else {
+                details.style.gridRow = 'span 1'; // collapsed
+            }
+        });
         if (addedPlayers > 30) {
-            typeDiv.classList.add('small-divider');
+            details.classList.add('small-divider');
         }
 
         actCounter++;
@@ -251,8 +338,145 @@ function drawAct(actName, sheetName) {
 
 }
 
-function makeYoutubeCell(item, id, event){
-    var url = new URL(item.music);
+function drawPlaylist(){
+    sessionStorage.setItem("act", "playlist");
+
+    clearViews();
+
+    var mainMenu = document.getElementById('main-menu');
+    var actView = document.getElementById('act-view');
+
+    allPlayers = [];
+    document.title = "Playlist";
+
+    mainMenu.style.display = 'none';
+    actView.style.display = 'block';
+
+    var flexcontainer = document.createElement('div');
+    flexcontainer.className = 'flex-container';
+    flexcontainer.style.gridTemplateColumns = '1fr';
+    
+    actView.appendChild(flexcontainer);
+        
+    var details = document.createElement('details');
+    details.open = true;
+    details.classList.add('category-details');
+    flexcontainer.appendChild(details);
+
+    var summary = document.createElement('summary');
+    summary.classList.add('category-summary');
+    details.appendChild(summary);
+    
+    var table = document.createElement('table');
+    table.id = 'events-table-playlist';
+    
+    var thead = document.createElement('thead');
+    thead.classList.add('category-thead');
+
+    var headerRow = document.createElement('tr');
+    
+    const th = document.createElement('th');
+    th.style.backgroundColor = COLORS[0];
+    th.textContent = "Playlist";
+    headerRow.appendChild(th);
+
+    thead.appendChild(headerRow);
+    summary.appendChild(thead);
+
+    var tbody = document.createElement('tbody');
+    table.appendChild(tbody);
+
+    details.appendChild(table);
+
+    var playersCounter = 0;
+
+    Object.entries(MY_MARKED_MUSIC).forEach((items) => {
+        items.forEach((item) => {
+
+            var music = item[0];
+            var event = item[1];
+
+            if (!music || !event ) return;
+
+            var row = document.createElement('tr');
+            tbody.appendChild(row);
+
+            playersCounter++;
+
+            row.addEventListener("contextmenu", (e) => {
+                e.preventDefault(); 
+                row.classList.remove('paused');
+            });
+
+            row.addEventListener("click", () => {
+                const player = row.querySelector("iframe, audio, video");
+
+                if (player) {
+                    // YouTube
+                    if (player.tagName === "IFRAME" && player.id && typeof YT !== "undefined" && YT.get) {
+                        const ytPlayer = YT.get(player.id);
+                        if (ytPlayer && ytPlayer.getPlayerState) {
+                            const state = ytPlayer.getPlayerState();
+                            if (state === YT.PlayerState.PLAYING) {
+                                ytPlayer.pauseVideo();
+                            } else {
+                                ytPlayer.playVideo();
+                            }
+                        }
+                    }
+                    // Google Drive → HTML5 audio/video
+                    else if (player.tagName === "AUDIO" || player.tagName === "VIDEO") {
+                        if (player.paused) {
+                            player.play();
+                        } else {
+                            player.pause();
+                        }
+                    }
+                }
+            });
+
+            var eventCell = document.createElement('td');
+            eventCell.textContent = event;
+
+            var musicCell = document.createElement('td');
+            var playerDiv = document.createElement('div');
+            playerDiv.id = `player-${playersCounter}`;
+            
+            musicCell.className = 'music-cell';
+            musicCell.appendChild(playerDiv);
+
+            row.append(eventCell, musicCell);
+            
+            if (music.includes("youtube")) {
+                musicCell.classList.add('youtube');
+                row.classList.add('youtube-row');
+                makeYoutubeCell(music, playerDiv.id);
+            } else if (music.includes("drive.google")) {
+                musicCell.classList.add('google-drive');
+                playerDiv.classList.add('google-drive-player');
+                row.classList.add('google-drive-row');
+                var fileId = getDriveFileId(music);
+                makeGoogleDrivePlayer(playerDiv.id, fileId);
+            }
+        });
+    });
+
+    var backBtn = document.createElement('button');
+    backBtn.id = 'back-btn';
+    backBtn.textContent = 'Back to Menu';
+    backBtn.onclick = drawMainMenu;
+    flexcontainer.appendChild(backBtn);
+
+    var pauseBtn = document.createElement("button");
+    pauseBtn.textContent = "Pause All";
+    pauseBtn.id = 'pause-btn';
+    pauseBtn.onclick = pauseAllYoutubePlayers;
+    flexcontainer.appendChild(pauseBtn);
+
+}
+
+function makeYoutubeCell(musicLink, id){
+    var url = new URL(musicLink);
     var videoId = url.searchParams.get("v");
 
     const player = new YT.Player(id, {
@@ -303,7 +527,6 @@ function makeYoutubeCell(item, id, event){
 
     allPlayers.push(player);
 }
-
 
 function pauseAllYoutubePlayers() {
   for (const p of allPlayers) {

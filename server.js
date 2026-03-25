@@ -1,8 +1,13 @@
+var express = require('express');
+var http = require('http');
+var socketIO = require('socket.io');
+var path = require('path');
+var fs = require('fs');
+var app = express();
+var server = http.Server(app);
+var io = socketIO(server);
 
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const app = express();
+app.use(express.static('public'));
 
 const configPath = path.join(__dirname, 'spreadsheets.json');
 if (!fs.existsSync(configPath)) {
@@ -14,13 +19,14 @@ const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 const APIKEY = config.APIKEY;
 const SPREADSHEETS = config.SPREADSHEETS;
 
-const PORT = 80;
-let GLOBAL_musicData = {};
+const APP_PORT = 80;
+var GLOBAL_musicData = {};
+var GLOBAL_markedSongs = [];
+var GLOBAL_browserIdList = [];
 
 //start server
-app.use(express.static(__dirname));
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}/`);
+server.listen(APP_PORT, () => {
+    console.log(`App running at http://localhost:${APP_PORT}/`);
     instantiateGlobalMusicData();
 });
 
@@ -34,6 +40,8 @@ app.get('/api/music', (req, res) => {
     });
     res.json(GLOBAL_musicData);
 });
+
+
 
 //handles requests from clients to refresh the music list with the latest version
 app.get('/api/refresh-music', async (req, res) => {
@@ -52,6 +60,103 @@ app.get('/api/refresh-music', async (req, res) => {
     }
 });
 
+
+io.on('connection', (socket) => { 
+    storeSocketWithBrowserId(socket);
+    synchMarkedSongs(socket); 
+
+    socket.on('markSong', (music, event) => {
+        markSong(socket, music, event)
+    });
+});
+
+function markSong(socket, music, event){
+    console.log('MARKSONG');
+        
+    const browserId = getBrowserIdFromSocket(socket);
+    if (!browserId) return;
+
+    console.log('past');
+
+    if (!GLOBAL_markedSongs[browserId]) {
+        GLOBAL_markedSongs[browserId] = [];
+    }
+
+    const index = GLOBAL_markedSongs[browserId].findIndex(
+        pair => pair[0] === music && pair[1] === event
+    );
+
+    if (index === -1) {
+        GLOBAL_markedSongs[browserId].push([music, event]);
+    } else {
+        GLOBAL_markedSongs[browserId].splice(index, 1);
+    }
+
+    const socketIds = GLOBAL_browserIdList[browserId] || [];
+    socketIds.forEach(id => {
+        const s = io.sockets.sockets.get(id);
+        if (s) {
+            console.log("emit");
+            s.emit('synchMarkedSongs', GLOBAL_markedSongs[browserId]);
+        }
+    });
+
+    console.log('Marksong:',socketIds, GLOBAL_markedSongs);
+}
+
+function storeSocketWithBrowserId(socket){
+    const browserId = getBrowserIdFromSocket(socket);
+    if (!browserId) return;
+
+    if (!GLOBAL_browserIdList[browserId]) {
+        GLOBAL_browserIdList[browserId] = [];
+    }
+
+    GLOBAL_browserIdList[browserId].push(socket.id);
+}
+
+function synchMarkedSongs(socket){
+    const browserId = getBrowserIdFromSocket(socket);
+    if (!browserId) return;
+
+    const markedSongs = getMarkedSongs(browserId);
+
+    if (markedSongs) {
+        const socketIds = GLOBAL_browserIdList[browserId] || [];
+
+        socketIds.forEach(id => {
+            const s = io.sockets.sockets.get(id);
+            if (s) {
+                s.emit('synchMarkedSongs', markedSongs);
+            }
+        });
+    }
+}
+
+function getMarkedSongs(browserId){
+    if (!GLOBAL_markedSongs[browserId]){
+        return null;
+    } else {
+        return GLOBAL_markedSongs[browserId];
+    }
+}
+
+function getBrowserIdFromSocket(socket){
+    const ip = socket.handshake.address || 'unknown-ip';
+    const userAgent = socket.handshake.headers['user-agent'] || 'unknown-agent';
+    return hashString(`${ip}::${userAgent}`);
+}
+
+function hashString(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        hash |= 0;
+    }
+    return 'b' + Math.abs(hash);
+}
+
+
 // instantiates the music
 // runs once on setup
 // if it finds a local file already stored, it takes that, otherwise uses google api to grab the music from the spreadsheet
@@ -66,6 +171,7 @@ async function instantiateGlobalMusicData() {
         }
     }
 }
+
 
 //request a fresh version of all the music in all the spreadsheet via google api
 async function fetchAllMusicData() {

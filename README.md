@@ -16,7 +16,7 @@ The music comes from google spreadsheets you can configure yourself with links t
 
 -open console, do npm install inside the RPMP folder to get the node modules
 
--create a google spreadsheet containing your music using the following example: https://docs.google.com/spreadsheets/d/1alcp3kRT8cPaMXm4fr4xqSQfg-RSK8kp6Jkb5-u2GcQ/edit?gid=0#gid=0
+-create a google spreadsheet containing your music using the following example: https://docs.google.com/spreadsheets/d/1h2-3OEoHlxLr14iynL4Aay6eDaR6KOeMESaoW8DXf9Q/edit?gid=777645388#gid=777645388
 
 -setup spreadsheats.json (see below)
 
