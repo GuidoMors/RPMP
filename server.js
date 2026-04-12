@@ -70,13 +70,9 @@ io.on('connection', (socket) => {
     });
 });
 
-function markSong(socket, music, event){
-    console.log('MARKSONG');
-        
+function markSong(socket, music, event){        
     const browserId = getBrowserIdFromSocket(socket);
     if (!browserId) return;
-
-    console.log('past');
 
     if (!GLOBAL_markedSongs[browserId]) {
         GLOBAL_markedSongs[browserId] = [];
@@ -96,12 +92,10 @@ function markSong(socket, music, event){
     socketIds.forEach(id => {
         const s = io.sockets.sockets.get(id);
         if (s) {
-            console.log("emit");
             s.emit('synchMarkedSongs', GLOBAL_markedSongs[browserId]);
         }
     });
 
-    console.log('Marksong:',socketIds, GLOBAL_markedSongs);
 }
 
 function storeSocketWithBrowserId(socket){

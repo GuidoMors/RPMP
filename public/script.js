@@ -4,7 +4,6 @@ var allPlayers = [];
 var MY_MARKED_MUSIC = [];
 
 socket.on('synchMarkedSongs', (markedSongs) => {
-    console.log("received Songs", markedSongs);
     MY_MARKED_MUSIC = markedSongs;
     clearMarkedSongs();
     markMarkedSongs();
@@ -134,7 +133,6 @@ function drawRefreshButton(){
             const data = await res.json();
             if (data.success) {
                 musicData = data.musicData;
-                console.log('Updated musicData:', musicData);
                 drawMainMenu();
             } else {
                 alert('Failed to refresh music data');
@@ -163,7 +161,6 @@ function drawAct(actName, sheetName) {
 
     sessionStorage.setItem("act", actName);
     sessionStorage.setItem("sheetName", sheetName);
-    console.log(actName, sheetName);
 
     clearViews();
 
@@ -245,7 +242,6 @@ function drawAct(actName, sheetName) {
                 row.addEventListener("contextmenu", (e) => {
                     e.preventDefault(); 
                     row.classList.remove('paused');
-                    console.log("emit markSong");
                     socket.emit('markSong', item.music, item.event);
                 });
 
@@ -305,6 +301,14 @@ function drawAct(actName, sheetName) {
                     var fileId = getDriveFileId(item.music);
                     makeGoogleDrivePlayer(playerDiv.id, fileId);
                 }
+
+                var link = document.createElement('a');
+                link.href = item.music;
+                link.textContent = "Open music";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+
+                musicCell.appendChild(link);
             });
         });
 
@@ -458,6 +462,14 @@ function drawPlaylist(){
                 var fileId = getDriveFileId(music);
                 makeGoogleDrivePlayer(playerDiv.id, fileId);
             }
+
+            var link = document.createElement('a');
+            link.href = music;
+            link.textContent = "Open music";
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            musicCell.appendChild(link);
+            
         });
     });
 
@@ -484,19 +496,25 @@ function makeYoutubeCell(musicLink, id){
         width: '560',
         videoId: videoId,
         playerVars: {
+            host: "https://www.youtube-nocookie.com",
             autoplay: 1,
             controls: 1,
             modestbranding: 1,
-            iv_load_policy: 3,
             iv_load_policy: 3,
             cc_load_policy: 0,
             loop: 1,
             playlist: videoId,
             rel: 0,
+            origin: window.location.origin
         },
         events: {
       onReady: (event) => {
+        console.log("on ready:", id);
         event.target.pauseVideo();
+
+        setTimeout(() => {
+            validateYoutubePlayer(player, id);
+        }, 1500);
       },
       onStateChange: (event) => {
         const tr = document.getElementById(id).closest("tr");
@@ -519,13 +537,51 @@ function makeYoutubeCell(musicLink, id){
                 tr.classList.add('paused');
                 tr.classList.remove('playing');
             }
-
+            }
         }
       }
-    }
-  });
+    });
 
     allPlayers.push(player);
+
+}
+
+function validateYoutubePlayer(player, id) {
+    try {
+        const duration = player.getDuration();
+        const state = player.getPlayerState();
+        const data = player.getVideoData();
+        
+        const invalid =
+            !duration ||
+            duration === 0 ||
+            state === -1 ||
+            !data ||
+            !data.video_id;
+
+        console.log("duration:", duration);
+        console.log("state:", state);
+        console.log("data:", data);
+        console.log("data.video_id:", data.video_id);
+        console.log("invalid:", invalid);
+
+
+        if (invalid) {
+            hideYoutubePlayer(id);
+        }
+
+    } catch (e) {
+        hideYoutubePlayer(id);
+    }
+}
+
+function hideYoutubePlayer(id) {
+    const container = document.getElementById(id);
+    if (!container) return;
+
+    const iframe = container.querySelector("iframe");
+    if (iframe) iframe.style.display = "none";
+    else container.style.display = "none";
 }
 
 function pauseAllYoutubePlayers() {
