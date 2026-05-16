@@ -293,7 +293,7 @@ function drawAct(actName, sheetName) {
                 if (item.music.includes("youtube")) {
                     musicCell.classList.add('youtube');
                     row.classList.add('youtube-row');
-                    makeYoutubeCell(item.music, playerDiv.id);
+                    makeYoutubeCell(item.music, playerDiv.id, item.cutoff);
                 } else if (item.music.includes("drive.google")) {
                     musicCell.classList.add('google-drive');
                     playerDiv.classList.add('google-drive-player');
@@ -393,14 +393,19 @@ function drawPlaylist(){
     details.appendChild(table);
 
     var playersCounter = 0;
-
+    
     Object.entries(MY_MARKED_MUSIC).forEach((items) => {
         items.forEach((item) => {
 
             var music = item[0];
             var event = item[1];
 
-            if (!music || !event ) return;
+            if (
+            !music ||
+            !event ||
+            music.includes("localhost") ||
+            music == "1"
+            ) return;
 
             var row = document.createElement('tr');
             tbody.appendChild(row);
@@ -487,16 +492,28 @@ function drawPlaylist(){
 
 }
 
-function makeYoutubeCell(musicLink, id){
+function makeYoutubeCell(musicLink, id, cutoff){
     var url = new URL(musicLink);
     var videoId = url.searchParams.get("v");
+
+    cutoff = parseInt(cutoff, 10);
+
+    const container = document.getElementById(id).parentElement;
+
+    const volumeSlider = document.createElement("input");
+    volumeSlider.type = "range";
+    volumeSlider.min = "0";
+    volumeSlider.max = "100";
+    volumeSlider.value = "100";
+    volumeSlider.classList.add('volumeSlider');
+
+    container.appendChild(volumeSlider);
 
     const player = new YT.Player(id, {
         height: '315',
         width: '560',
         videoId: videoId,
         playerVars: {
-            host: "https://www.youtube-nocookie.com",
             autoplay: 1,
             controls: 1,
             modestbranding: 1,
@@ -505,41 +522,127 @@ function makeYoutubeCell(musicLink, id){
             loop: 1,
             playlist: videoId,
             rel: 0,
-            origin: window.location.origin
+            mute: 1,
         },
         events: {
-      onReady: (event) => {
-        console.log("on ready:", id);
-        event.target.pauseVideo();
+            onReady: (event) => {
+                const p = event.target;
+                p._firstPlayHandled = false;
 
-        setTimeout(() => {
-            validateYoutubePlayer(player, id);
-        }, 1500);
-      },
-      onStateChange: (event) => {
-        const tr = document.getElementById(id).closest("tr");
+                p.setVolume(12);
+                volumeSlider.value = 12;
+                if ( cutoff != null && cutoff != "" && cutoff != 0 ) {
 
-        if (!tr) return;
+                    p._cutoffWatcher = setInterval(() => {
+                        if ( !p._isFading && p.getPlayerState() === YT.PlayerState.PLAYING ) {
+                           
+                            const currentTime = p.getCurrentTime();
 
-        const currentTime = player.getCurrentTime();
+                            console.log(currentTime);
 
-        if (event.data === YT.PlayerState.PLAYING) {
-          tr.classList.add('playing');
-          tr.classList.remove('paused');
-        } else if (
-          event.data === YT.PlayerState.PAUSED ||
-          event.data === YT.PlayerState.ENDED
-        ) {
-            if (currentTime < 1){
-                tr.classList.remove('playing');
-                tr.classList.remove('paused');
-            } else {
-                tr.classList.add('paused');
-                tr.classList.remove('playing');
-            }
+                            if (currentTime >= cutoff) {
+                                p._isFading = true;
+
+                                const startVolume = p.getVolume();
+                                const fadeDuration = 3000;
+                                const steps = 30;
+                                const stepTime = fadeDuration / steps;
+                                let currentStep = 0;
+
+                                p._fadeInterval = setInterval(() => {
+                                    currentStep++;
+
+                                    const newVolume = Math.max(
+                                        0,
+                                        startVolume * (1 - currentStep / steps)
+                                    );
+
+                                    p.setVolume(newVolume);
+                                    volumeSlider.value = newVolume;
+
+                                    if (currentStep >= steps) {
+                                        clearInterval(p._fadeInterval);
+
+                                        p.seekTo(0);
+                                        p.playVideo();
+
+                                        p.setVolume(startVolume);
+                                        volumeSlider.value = startVolume;
+
+                                        p._isFading = false;
+                                    }
+                                }, stepTime);
+                            }
+                        }
+                    }, 400);
+                }
+
+
+                setTimeout(() => {
+                    validateYoutubePlayer(player, id);
+                }, 4000);
+            },
+            onStateChange: (event) => {
+                const tr = document.getElementById(id).closest("tr");
+
+                if (!tr) return;
+
+                const currentTime = player.getCurrentTime();
+
+                if (event.data === YT.PlayerState.PLAYING) {
+                    if (!player._firstPlayHandled) {
+                        player._firstPlayHandled = true;
+
+                        player.pauseVideo();
+                        player.seekTo(0);
+                        player.unMute();
+
+
+
+                        return;
+                    } else {
+                        tr.classList.add('playing');
+                        tr.classList.remove('paused');
+                    }
+
+                } else if (
+                    event.data === YT.PlayerState.PAUSED ||
+                    event.data === YT.PlayerState.ENDED
+                ) {
+                    if (currentTime < 1){
+                        tr.classList.remove('playing');
+                        tr.classList.remove('paused');
+                    } else {
+                        tr.classList.add('paused');
+                        tr.classList.remove('playing');
+                    }
+                }
             }
         }
-      }
+    });
+
+    volumeSlider.addEventListener("input", (e) => {
+        const value = parseInt(e.target.value, 10);
+        player.setVolume(value);
+        if (value > 0 && player.isMuted()) {
+            player.unMute();
+        }
+        if (value === 0) {
+            player.mute();
+        }
+    });
+
+    volumeSlider.addEventListener("mousedown", (e) => {
+        e.stopPropagation();
+    });
+
+    volumeSlider.addEventListener("touchstart", (e) => {
+        e.stopPropagation();
+    });
+
+    volumeSlider.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
     });
 
     allPlayers.push(player);
@@ -558,14 +661,6 @@ function validateYoutubePlayer(player, id) {
             state === -1 ||
             !data ||
             !data.video_id;
-
-        console.log("duration:", duration);
-        console.log("state:", state);
-        console.log("data:", data);
-        console.log("data.video_id:", data.video_id);
-        console.log("invalid:", invalid);
-
-
         if (invalid) {
             hideYoutubePlayer(id);
         }

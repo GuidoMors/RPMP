@@ -17,6 +17,7 @@ The music comes from google spreadsheets you can configure yourself with links t
 -open console, do npm install inside the RPMP folder to get the node modules
 
 -create a google spreadsheet containing your music using the following example: https://docs.google.com/spreadsheets/d/1h2-3OEoHlxLr14iynL4Aay6eDaR6KOeMESaoW8DXf9Q/edit?gid=777645388#gid=777645388
+make sure the spreadsheet is publicly visible
 
 -setup spreadsheats.json (see below)
 
@@ -35,6 +36,7 @@ For example if the url is: https://docs.google.com/spreadsheets/d/1alcp3kRT8cPaM
 the spreadsheet has id:                                           1alcp3kRT8cPaMXm4fr4xqSQfg-RSK8kp6Jkb5-u2GcQ
 
 OTHER FIELDS: the name and shorthand of the spreadsheat can be anything, but should be unique. The name of a tab has to be the exact name that it has in the google drive spreadsheet. You can find the tab names at the bottom while having the spreadsheet open.
+the cutoff field is for if you want a song to fade out and loop early. fill it with the amount of seconds at which this fade out should happen
 
 
 

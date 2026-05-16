@@ -199,6 +199,7 @@ async function googleAPIFetchMusicData(sheet) {
         for (const tabName of sheet.spreadsheet.tabs) {
             const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheet.spreadsheet.id}/values/${tabName}?key=${APIKEY}`);
             const jsonData = await response.json();
+            console.log(jsonData);
             transformedData.push(transformMusicData(jsonData));
         }
 
@@ -274,7 +275,7 @@ function transformMusicData(json) {
 
     for (let i = 1; i < rows.length; i++) {
         var row = rows[i];
-        var [event, author, song, music, act, type, subtype] = row;
+        var [event, author, song, music, act, type, subtype, cutoff] = row;
 
         if (!act || act.length === 0) {
             act = "0";
@@ -294,6 +295,7 @@ function transformMusicData(json) {
                 // author: author || "",
                 // song: song || "",
                 music: music || "",
+                cutoff: cutoff || "",
             });
         }
 
