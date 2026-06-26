@@ -308,6 +308,28 @@ function drawAct(actName, sheetName) {
                 link.target = "_blank";
                 link.rel = "noopener noreferrer";
 
+                if (item.music.includes("youtube")) {
+                    var retryBtn = document.createElement('button');
+                    retryBtn.textContent = "Retry";
+                    retryBtn.type = "button";
+
+                    retryBtn.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        destroyYoutubeCell(playerDiv.id);
+
+                        makeYoutubeCell(
+                            item.music,
+                            playerDiv.id,
+                            item.cutoff
+                        );
+                    });
+
+                    musicCell.appendChild(document.createTextNode(" "));
+                    musicCell.appendChild(retryBtn);
+                }
+
                 musicCell.appendChild(link);
             });
         });
@@ -647,6 +669,40 @@ function makeYoutubeCell(musicLink, id, cutoff){
 
     allPlayers.push(player);
 
+}
+
+function destroyYoutubeCell(id) {
+    const player = YT.get(id);
+
+    if (player) {
+        if (player._cutoffWatcher) {
+            clearInterval(player._cutoffWatcher);
+        }
+
+        if (player._fadeInterval) {
+            clearInterval(player._fadeInterval);
+        }
+
+        player.destroy();
+    }
+
+    const playerDiv = document.getElementById(id);
+
+    if (playerDiv) {
+        const container = playerDiv.parentElement;
+
+        // remove associated volume slider
+        const slider = container.querySelector(".volumeSlider");
+        if (slider) {
+            slider.remove();
+        }
+
+        // recreate clean target div
+        const freshDiv = document.createElement("div");
+        freshDiv.id = id;
+
+        playerDiv.replaceWith(freshDiv);
+    }
 }
 
 function validateYoutubePlayer(player, id) {
