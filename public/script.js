@@ -426,7 +426,8 @@ function drawPlaylist(){
             !music ||
             !event ||
             music.includes("localhost") ||
-            music == "1"
+            music == "1" ||
+            (!music.includes("youtube") && !music.includes("drive.google"))
             ) return;
 
             var row = document.createElement('tr');
@@ -526,7 +527,7 @@ function makeYoutubeCell(musicLink, id, cutoff){
     volumeSlider.type = "range";
     volumeSlider.min = "0";
     volumeSlider.max = "100";
-    volumeSlider.value = "100";
+    volumeSlider.value = "12";
     volumeSlider.classList.add('volumeSlider');
 
     container.appendChild(volumeSlider);
@@ -551,27 +552,32 @@ function makeYoutubeCell(musicLink, id, cutoff){
                 const p = event.target;
                 p._firstPlayHandled = false;
 
-                p.setVolume(12);
-                volumeSlider.value = 12;
-                if ( cutoff != null && cutoff != "" && cutoff != 0 ) {
+                // Store the real user volume separately
+                p._targetVolume = 12;
+
+                p.setVolume(p._targetVolume);
+                volumeSlider.value = p._targetVolume;
+
+                if (cutoff != null && cutoff != "" && cutoff != 0) {
 
                     p._cutoffWatcher = setInterval(() => {
-                        if ( !p._isFading && p.getPlayerState() === YT.PlayerState.PLAYING ) {
-                           
+
+                        if (!p._isFading && p.getPlayerState() === YT.PlayerState.PLAYING) {
+
                             const currentTime = p.getCurrentTime();
 
-                            console.log(currentTime);
-
                             if (currentTime >= cutoff) {
+
                                 p._isFading = true;
 
-                                const startVolume = p.getVolume();
+                                const startVolume = p._targetVolume;
                                 const fadeDuration = 3000;
                                 const steps = 30;
                                 const stepTime = fadeDuration / steps;
                                 let currentStep = 0;
 
                                 p._fadeInterval = setInterval(() => {
+
                                     currentStep++;
 
                                     const newVolume = Math.max(
@@ -580,30 +586,32 @@ function makeYoutubeCell(musicLink, id, cutoff){
                                     );
 
                                     p.setVolume(newVolume);
-                                    volumeSlider.value = newVolume;
 
                                     if (currentStep >= steps) {
+
                                         clearInterval(p._fadeInterval);
 
                                         p.seekTo(0);
                                         p.playVideo();
 
-                                        p.setVolume(startVolume);
-                                        volumeSlider.value = startVolume;
+                                        // Restore the user's chosen volume
+                                        p.setVolume(p._targetVolume);
 
                                         p._isFading = false;
                                     }
+
                                 }, stepTime);
                             }
                         }
+
                     }, 400);
                 }
-
 
                 setTimeout(() => {
                     validateYoutubePlayer(player, id);
                 }, 4000);
             },
+
             onStateChange: (event) => {
                 const tr = document.getElementById(id).closest("tr");
 
@@ -612,14 +620,13 @@ function makeYoutubeCell(musicLink, id, cutoff){
                 const currentTime = player.getCurrentTime();
 
                 if (event.data === YT.PlayerState.PLAYING) {
+
                     if (!player._firstPlayHandled) {
                         player._firstPlayHandled = true;
 
                         player.pauseVideo();
                         player.seekTo(0);
                         player.unMute();
-
-
 
                         return;
                     } else {
@@ -631,6 +638,7 @@ function makeYoutubeCell(musicLink, id, cutoff){
                     event.data === YT.PlayerState.PAUSED ||
                     event.data === YT.PlayerState.ENDED
                 ) {
+
                     if (currentTime < 1){
                         tr.classList.remove('playing');
                         tr.classList.remove('paused');
@@ -643,16 +651,25 @@ function makeYoutubeCell(musicLink, id, cutoff){
         }
     });
 
+
     volumeSlider.addEventListener("input", (e) => {
+
         const value = parseInt(e.target.value, 10);
+
+        // Remember the user's chosen volume
+        player._targetVolume = value;
+
         player.setVolume(value);
+
         if (value > 0 && player.isMuted()) {
             player.unMute();
         }
+
         if (value === 0) {
             player.mute();
         }
     });
+
 
     volumeSlider.addEventListener("mousedown", (e) => {
         e.stopPropagation();
@@ -667,9 +684,164 @@ function makeYoutubeCell(musicLink, id, cutoff){
         e.stopPropagation();
     });
 
-    allPlayers.push(player);
 
+    allPlayers.push(player);
 }
+
+// function makeYoutubeCell(musicLink, id, cutoff){
+//     var url = new URL(musicLink);
+//     var videoId = url.searchParams.get("v");
+
+//     cutoff = parseInt(cutoff, 10);
+
+//     const container = document.getElementById(id).parentElement;
+
+//     const volumeSlider = document.createElement("input");
+//     volumeSlider.type = "range";
+//     volumeSlider.min = "0";
+//     volumeSlider.max = "100";
+//     volumeSlider.value = "100";
+//     volumeSlider.classList.add('volumeSlider');
+
+//     container.appendChild(volumeSlider);
+
+//     const player = new YT.Player(id, {
+//         height: '315',
+//         width: '560',
+//         videoId: videoId,
+//         playerVars: {
+//             autoplay: 1,
+//             controls: 1,
+//             modestbranding: 1,
+//             iv_load_policy: 3,
+//             cc_load_policy: 0,
+//             loop: 1,
+//             playlist: videoId,
+//             rel: 0,
+//             mute: 1,
+//         },
+//         events: {
+//             onReady: (event) => {
+//                 const p = event.target;
+//                 p._firstPlayHandled = false;
+
+//                 p.setVolume(12);
+//                 volumeSlider.value = 12;
+//                 if ( cutoff != null && cutoff != "" && cutoff != 0 ) {
+
+//                     p._cutoffWatcher = setInterval(() => {
+//                         if ( !p._isFading && p.getPlayerState() === YT.PlayerState.PLAYING ) {
+                           
+//                             const currentTime = p.getCurrentTime();
+
+//                             console.log(currentTime);
+
+//                             if (currentTime >= cutoff) {
+//                                 p._isFading = true;
+
+//                                 const startVolume = p.getVolume();
+//                                 const fadeDuration = 3000;
+//                                 const steps = 30;
+//                                 const stepTime = fadeDuration / steps;
+//                                 let currentStep = 0;
+
+//                                 p._fadeInterval = setInterval(() => {
+//                                     currentStep++;
+
+//                                     const newVolume = Math.max(
+//                                         0,
+//                                         startVolume * (1 - currentStep / steps)
+//                                     );
+
+//                                     p.setVolume(newVolume);
+//                                     volumeSlider.value = newVolume;
+
+//                                     if (currentStep >= steps) {
+//                                         clearInterval(p._fadeInterval);
+
+//                                         p.seekTo(0);
+//                                         p.playVideo();
+
+//                                         p.setVolume(startVolume);
+//                                         volumeSlider.value = startVolume;
+
+//                                         p._isFading = false;
+//                                     }
+//                                 }, stepTime);
+//                             }
+//                         }
+//                     }, 400);
+//                 }
+
+
+//                 setTimeout(() => {
+//                     validateYoutubePlayer(player, id);
+//                 }, 4000);
+//             },
+//             onStateChange: (event) => {
+//                 const tr = document.getElementById(id).closest("tr");
+
+//                 if (!tr) return;
+
+//                 const currentTime = player.getCurrentTime();
+
+//                 if (event.data === YT.PlayerState.PLAYING) {
+//                     if (!player._firstPlayHandled) {
+//                         player._firstPlayHandled = true;
+
+//                         player.pauseVideo();
+//                         player.seekTo(0);
+//                         player.unMute();
+
+//                         return;
+//                     } else {
+//                         tr.classList.add('playing');
+//                         tr.classList.remove('paused');
+//                     }
+
+//                 } else if (
+//                     event.data === YT.PlayerState.PAUSED ||
+//                     event.data === YT.PlayerState.ENDED
+//                 ) {
+//                     if (currentTime < 1){
+//                         tr.classList.remove('playing');
+//                         tr.classList.remove('paused');
+//                     } else {
+//                         tr.classList.add('paused');
+//                         tr.classList.remove('playing');
+//                     }
+//                 }
+//             }
+//         }
+//     });
+
+//     volumeSlider.addEventListener("input", (e) => {
+//         const value = parseInt(e.target.value, 10);
+//         player.setVolume(value);
+//         if (value > 0 && player.isMuted()) {
+//             player.unMute();
+//         }
+//         if (value === 0) {
+//             player.mute();
+//         }
+//     });
+
+//     volumeSlider.addEventListener("mousedown", (e) => {
+//         e.stopPropagation();
+//     });
+
+//     volumeSlider.addEventListener("touchstart", (e) => {
+//         e.stopPropagation();
+//     });
+
+//     volumeSlider.addEventListener("click", (e) => {
+//         e.preventDefault();
+//         e.stopPropagation();
+//     });
+
+//     allPlayers.push(player);
+
+// }
 
 function destroyYoutubeCell(id) {
     const player = YT.get(id);
