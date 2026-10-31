@@ -65,12 +65,12 @@ io.on('connection', (socket) => {
     storeSocketWithBrowserId(socket);
     synchMarkedSongs(socket); 
 
-    socket.on('markSong', (music, event) => {
-        markSong(socket, music, event)
+    socket.on('markSong', (music, event, cutoff) => {
+        markSong(socket, music, event, cutoff)
     });
 });
 
-function markSong(socket, music, event){        
+function markSong(socket, music, event, cutoff){        
     const browserId = getBrowserIdFromSocket(socket);
     if (!browserId) return;
 
@@ -83,7 +83,7 @@ function markSong(socket, music, event){
     );
 
     if (index === -1) {
-        GLOBAL_markedSongs[browserId].push([music, event]);
+        GLOBAL_markedSongs[browserId].push([music, event, cutoff]);
     } else {
         GLOBAL_markedSongs[browserId].splice(index, 1);
     }

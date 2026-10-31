@@ -111,7 +111,7 @@ function clearMarkedSongs(){
 }
 
 function markMarkedSongs(){
-        MY_MARKED_MUSIC.forEach(([music, event]) => {
+    MY_MARKED_MUSIC.forEach(([music, event, cutoff]) => {
         const row = Array.from(document.querySelectorAll('tr')).find(
             r => r.dataset.music === music && r.dataset.event === event
         );
@@ -242,7 +242,7 @@ function drawAct(actName, sheetName) {
                 row.addEventListener("contextmenu", (e) => {
                     e.preventDefault(); 
                     row.classList.remove('paused');
-                    socket.emit('markSong', item.music, item.event);
+                    socket.emit('markSong', item.music, item.event, item.cutoff);
                 });
 
                 row.addEventListener("click", () => {
@@ -421,6 +421,7 @@ function drawPlaylist(){
 
             var music = item[0];
             var event = item[1];
+            var cutoff = item[2];
 
             if (
             !music ||
@@ -482,7 +483,7 @@ function drawPlaylist(){
             if (music.includes("youtube")) {
                 musicCell.classList.add('youtube');
                 row.classList.add('youtube-row');
-                makeYoutubeCell(music, playerDiv.id);
+                makeYoutubeCell(music, playerDiv.id, cutoff);
             } else if (music.includes("drive.google")) {
                 musicCell.classList.add('google-drive');
                 playerDiv.classList.add('google-drive-player');
@@ -490,6 +491,28 @@ function drawPlaylist(){
                 var fileId = getDriveFileId(music);
                 makeGoogleDrivePlayer(playerDiv.id, fileId);
             }
+
+            if (music.includes("youtube")) {
+                var retryBtn = document.createElement('button');
+                retryBtn.textContent = "Retry";
+                retryBtn.type = "button";
+
+                retryBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    destroyYoutubeCell(playerDiv.id);
+
+                    makeYoutubeCell(
+                        music,
+                        playerDiv.id,
+                        cutoff
+                    );
+                });
+            }
+
+            musicCell.appendChild(document.createTextNode(" "));
+            musicCell.appendChild(retryBtn);
 
             var link = document.createElement('a');
             link.href = music;
@@ -558,53 +581,52 @@ function makeYoutubeCell(musicLink, id, cutoff){
                 p.setVolume(p._targetVolume);
                 volumeSlider.value = p._targetVolume;
 
-                if (cutoff != null && cutoff != "" && cutoff != 0) {
+                if (cutoff != null && cutoff != "" && cutoff != 0 && cutoff != undefined) {
 
-                    p._cutoffWatcher = setInterval(() => {
+                    // p._cutoffWatcher = setInterval(() => {
 
-                        if (!p._isFading && p.getPlayerState() === YT.PlayerState.PLAYING) {
+                    //     if (!p._isFading && p.getPlayerState() === YT.PlayerState.PLAYING) {
 
-                            const currentTime = p.getCurrentTime();
+                    //         const currentTime = p.getCurrentTime();
 
-                            if (currentTime >= cutoff) {
+                    //         if (currentTime >= cutoff) {
 
-                                p._isFading = true;
+                    //             p._isFading = true;
 
-                                const startVolume = p._targetVolume;
-                                const fadeDuration = 3000;
-                                const steps = 30;
-                                const stepTime = fadeDuration / steps;
-                                let currentStep = 0;
+                    //             const startVolume = p._targetVolume;
+                    //             const fadeDuration = 3000;
+                    //             const steps = 30;
+                    //             const stepTime = fadeDuration / steps;
+                    //             let currentStep = 0;
 
-                                p._fadeInterval = setInterval(() => {
+                    //             p._fadeInterval = setInterval(() => {
 
-                                    currentStep++;
+                    //                 currentStep++;
 
-                                    const newVolume = Math.max(
-                                        0,
-                                        startVolume * (1 - currentStep / steps)
-                                    );
+                    //                 const newVolume = Math.max(
+                    //                     0,
+                    //                     startVolume * (1 - currentStep / steps)
+                    //                 );
 
-                                    p.setVolume(newVolume);
+                    //                 if (currentStep >= steps) {
 
-                                    if (currentStep >= steps) {
+                    //                     clearInterval(p._fadeInterval);
 
-                                        clearInterval(p._fadeInterval);
+                    //                     p.seekTo(0);
+                    //                     p.playVideo();
 
-                                        p.seekTo(0);
-                                        p.playVideo();
+                    //                     p.setVolume(p._targetVolume);
 
-                                        // Restore the user's chosen volume
-                                        p.setVolume(p._targetVolume);
+                    //                     p._isFading = false;
+                    //                 } else {
+                    //                     p.setVolume(newVolume);
+                    //                 }
 
-                                        p._isFading = false;
-                                    }
+                    //             }, stepTime);
+                    //         }
+                    //     }
 
-                                }, stepTime);
-                            }
-                        }
-
-                    }, 400);
+                    // }, 400);
                 }
 
                 setTimeout(() => {

@@ -49,18 +49,36 @@ table th {
     overflow: hidden;
 }
 
+.music-cell.google-drive {
+    overflow: scroll;
+     scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.music-cell.google-drive::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
 .google-drive-player {
     margin-left:-27px;
 }
 
-.google-drive iframe {
+/* .google-drive iframe {
     height: 200px;
     top: -77px;
     width: 300%;
     max-width: 115% !important;
     position:absolute;
-}
+} */
 
+.google-drive iframe {
+    height: 130px;
+    top: -40px;
+    width: 300%;
+    max-width: 110% !important;
+    position: absolute;
+    transform: scaleY(0.7);
+}
 
 .flex-container {
     display: grid;
